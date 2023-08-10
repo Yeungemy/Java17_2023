@@ -6,3 +6,5 @@ sudo apt install -y openjdk-17-jdk
 sudo snap install intellij-idea-community --classic
 intellij-idea-community
 
+#
+
