@@ -1,3 +1,4 @@
+package smallExcercises;
 public class Championship {
     public static void main(String[] args) {
         int gryffindor = 500;    //gryffindor points      

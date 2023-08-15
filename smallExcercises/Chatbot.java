@@ -1,3 +1,4 @@
+package smallExcercises;
 import java.util.Scanner;
 
 public class Chatbot {
