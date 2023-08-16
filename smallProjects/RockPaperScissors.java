@@ -12,7 +12,8 @@ public class RockPaperScissors {
         int javabotShoot = (int)(Math.random() * 3) + 1;
 
         if(choice == 'y'){
-            System.out.print("Your Shoot: ");
+            displayMenu();
+            System.out.print("\nYour Shoot: ");
             userShoot = scanner.nextInt();
 
             if(! isLessThanOne(userShoot) && !isGreaterThanThree(userShoot)){
@@ -39,9 +40,9 @@ public class RockPaperScissors {
 
     public static void displayMenu(){
         System.out.print("\nHere is the menu of the game: \n");
-        System.out.println("Shoot 1 for Rock;");
-        System.out.println("Shoot 2 for Paper;");
-        System.out.println("Shoot 3 for Scissors;");
+        System.out.println("\tShoot number 1 for Rock;");
+        System.out.println("\tShoot number 2 for Paper;");
+        System.out.println("\tShoot number 3 for Scissors.");
     }
 
     public static void displayUserShoot(int userShoot){
