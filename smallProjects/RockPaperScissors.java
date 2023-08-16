@@ -76,7 +76,7 @@ public class RockPaperScissors {
         if(isUserWon(userShoot, javabotShoot)){
             System.out.println("\nCongratulation, you won the game!");
         }else{
-            System.out.println("\nBetter lunck next time!");
+            System.out.println("\nBetter luck next time!");
         }
         System.out.println("******************************************************************");
     }
