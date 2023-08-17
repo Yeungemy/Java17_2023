@@ -1,4 +1,5 @@
 package smallExcercises;
+
 import java.util.Scanner;
 
 public class Pokerito {
@@ -10,7 +11,7 @@ public class Pokerito {
         String javabotCard = "";
         String playerCard = "";
         int numberOfRiverCards = 5;
-        int riverCards[] = {0, 0, 0, 0, 0};
+        int riverCards[] = { 0, 0, 0, 0, 0 };
 
         Scanner scanner = new Scanner(System.in);
 
@@ -27,7 +28,7 @@ public class Pokerito {
         playerCardNo = randomNumber(min, max);
         playerCard = randomCard(playerCardNo);
         displayCard(playerCard);
-        
+
         // deliver card to Javabot
         System.out.println("Here is Javabot's card: ");
         javabotCardNo = randomNumber(min, max);
@@ -71,16 +72,16 @@ public class Pokerito {
         return (int) (Math.random() * max + min);
     }
 
-    public static void displayCard(String card){
+    public static void displayCard(String card) {
         System.out.println(card);
     }
 
-    public static int[] deliverCardsToRiver(int numberOfCard, int min, int max){
+    public static int[] deliverCardsToRiver(int numberOfCard, int min, int max) {
         String riverCard = "";
-        int riverCards[] = {0, 0, 0, 0, 0};
+        int riverCards[] = { 0, 0, 0, 0, 0 };
 
         System.out.println("Here are cards in the river: ");
-        for(int i = 0; i < numberOfCard; i++){
+        for (int i = 0; i < numberOfCard; i++) {
             riverCards[i] = randomNumber(min, max);
             riverCard = randomCard(riverCards[i]);
 
@@ -91,19 +92,19 @@ public class Pokerito {
         return riverCards;
     }
 
-    public static int countMatches(int cardNo, int[] riverCards){
+    public static int countMatches(int cardNo, int[] riverCards) {
         int matches = 0;
 
-        for(int x : riverCards){
-            if( x == cardNo){
+        for (int x : riverCards) {
+            if (x == cardNo) {
                 matches++;
             }
         }
-        
+
         return matches;
     }
 
-    public static void displayReport(int playerCardNo, int javabotCardNo, int[] riverCards){
+    public static void displayReport(int playerCardNo, int javabotCardNo, int[] riverCards) {
         int playerMatches = countMatches(playerCardNo, riverCards);
         int javabotMatches = countMatches(javabotCardNo, riverCards);
 
@@ -114,11 +115,11 @@ public class Pokerito {
         System.out.println("Your number of matches: " + playerMatches + ".");
         System.out.println("Javabot's number of matches: " + javabotMatches + ".");
 
-        if(playerMatches > javabotMatches){
+        if (playerMatches > javabotMatches) {
             System.out.println("\nCongratulation, you won the game!");
-        }else if(playerMatches == javabotMatches){
-            System.out.println("It is a tie!");
-        }else{
+        } else if (playerMatches == javabotMatches) {
+            System.out.println("\nIt is a tie!");
+        } else {
             System.out.println("\nBetter luck next time!");
         }
 
