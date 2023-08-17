@@ -122,7 +122,7 @@ public class Blackjack {
     }
 
     public static ArrayList<Integer> drawTwoCards(int min, int max) {
-        ArrayList<Integer> cards = new ArrayList();
+        ArrayList<Integer> cards = new ArrayList<Integer>();
 
         cards.add(drawRandomCard(min, max));
         cards.add(drawRandomCard(min, max));

@@ -10,12 +10,6 @@ public class Chatbot {
         String languag = "";
         int experience = 0;
 
-        if (false) {
-            System.out.println("Hello");
-        } else {
-            System.out.println("Goodbye");
-        }
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Java Chatbot: Hello! What is your name?");

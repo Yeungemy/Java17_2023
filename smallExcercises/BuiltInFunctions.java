@@ -89,7 +89,7 @@ public class BuiltInFunctions {
         double base = 2;
         double exponent = 3;
         
-        System.out.println(Math.pow(2, 3));
+        System.out.println(Math.pow(base, exponent));
 
         /**
          * Scenario 8
