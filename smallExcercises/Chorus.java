@@ -7,6 +7,5 @@ public class Chorus {
         System.out.println("Don't blame it on the moonlight");
         System.out.println("Don't blame it on good times");
         System.out.println("Don't blame it on the boogie\n");
-
     }
 }

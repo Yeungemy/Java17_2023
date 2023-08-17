@@ -13,8 +13,6 @@ public class TypeConversion {
         double salary = 5423.94;
         System.out.println("Mortgage Broker: What is your monthly salary in dollars?");
         System.out.println("My monthly salary is: " + (int)salary);
-
-
     }
 
 }

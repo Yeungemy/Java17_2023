@@ -1,4 +1,4 @@
-package smallExcercises;
+package smallProjects;
 public class AppleSelling {
     public static void main(String[] args) {
         double profit = 0;

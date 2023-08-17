@@ -1,4 +1,4 @@
-package smallExcercises;
+package smallProjects;
 public class MarketingReport {
     public static void main(String[] args) {
         double sales = 24309.65;

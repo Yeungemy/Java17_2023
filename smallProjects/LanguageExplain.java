@@ -1,4 +1,4 @@
-package smallExcercises;
+package smallProjects;
 
 import java.text.DecimalFormat;
 

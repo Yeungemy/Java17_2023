@@ -1,4 +1,4 @@
-package smallExcercises;
+package smallProjects;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
