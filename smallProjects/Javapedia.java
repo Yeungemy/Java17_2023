@@ -39,8 +39,7 @@ public class Javapedia {
             displayFigureInfo(historicalFigures, indexOfFigure);
         }else{
             System.out.println("\nSorry, that figure cannot be found!");
-        }
-        
+        }    
 
         scanner.close();
     }
