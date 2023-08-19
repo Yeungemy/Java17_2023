@@ -203,9 +203,7 @@ public class TicTacToe {
     }
 
     public static void displayReport(char marker, char[][] board) {
-        printBoard(board);
-
-        System.out.println("\n\n\nHere is the game Report: ");
+        System.out.println("\nHere is the game Report: ");
         System.out.println("******************************************************************");
         System.out.println("\nCongratulation, Player with marker '" + marker + "' won that game!\n");
         System.out.println("******************************************************************");
