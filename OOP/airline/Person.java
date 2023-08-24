@@ -18,7 +18,6 @@ public class Person {
     }
 
     public void displayPersonInfo(){
-        System.out.println("Name: " + this.name + "\n" + "Nationality: " + this.nationality + "\n" + "Data of Birth: " + this.dataOfBirth + "\n"
-                + "Passport: " + Arrays.toString(this.passport) + "\n" + "Seat #: " + this.seatNumber);
+        System.out.println("Below is personal information: " + "\n\tName: " + this.name + "\n\tNationality: " + this.nationality + "\n\tData of Birth: " + this.dataOfBirth + "\n\tPassport: " + Arrays.toString(this.passport) + "\n\tSeat #: " + this.seatNumber);
     }
 }

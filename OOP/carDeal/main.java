@@ -2,12 +2,8 @@ package OOP.carDeal;;
 
 public class main {
     public static void main(String[] args) {
-        Car nissan = new Car();
-        nissan.make = "Nissan";
-        nissan.price = 36890;
-        nissan.year = 2022;
-        nissan.color = "white";
+        Car nissan = new Car("Nissan", 36890, 2022, "white");
 
-        System.out.println(nissan.make);
+        nissan.displayCarInfo();
     }
 }
