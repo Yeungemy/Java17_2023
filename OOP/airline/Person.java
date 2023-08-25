@@ -14,10 +14,10 @@ public class Person {
         this.nationality = nationality;
         this.dataOfBirth = dataOfBirth;
         this.seatNumber = seatNumber;
-        this.passport = new String[] {this.name, this.nationality, this.dataOfBirth};
+        this.passport = new String[] { this.name, this.nationality, this.dataOfBirth };
     }
 
-    public Person(Person people){
+    public Person(Person people) {
         this.name = people.name;
         this.nationality = people.nationality;
         this.dataOfBirth = people.dataOfBirth;
@@ -25,9 +25,10 @@ public class Person {
         this.passport = Arrays.copyOf(people.passport, people.passport.length);
     }
 
-    public void displayPersonInfo() {
-        System.out.println("Below is personal information: " + "\n\tName: " + this.name + "\n\tNationality: "
-                + this.nationality + "\n\tData of Birth: " + this.dataOfBirth + "\n\tSeat #: " + this.seatNumber + "\n\tPassport: " + Arrays.toString(this.passport));
+    public String toString() {
+        return "Below is personal information of " + this.name + ":\n\tNationality: "
+                + this.nationality + "\n\tData of Birth: " + this.dataOfBirth + "\n\tSeat #: " + this.seatNumber
+                + "\n\tPassport: " + Arrays.toString(this.passport);
     }
 
     public String getName() {
@@ -71,16 +72,18 @@ public class Person {
         this.seatNumber = seatNumber;
     }
 
-    public boolean applyPassport(){
-        return (int)((Math.random()) * 2) == 1;
+    public boolean applyPassport() {
+        return (int) ((Math.random()) * 2) == 1;
     }
 
-    public void chooseSeat(){
-        this.seatNumber = (int)(Math.random() * 11 + 1);
+    public void chooseSeat() {
+        this.seatNumber = (int) (Math.random() * 11 + 1);
     }
 
-    public void displayPassportApplyResult(boolean isSuccessfullyApplied){
-        if(isSuccessfullyApplied) System.out.println("Congratulations " + this.name +". Your passport was﻿ approved!"); 
-        else System.out.println("We are sorry " + this.name +". We cannot process your application!");
+    public void displayPassportApplyResult(boolean isSuccessfullyApplied) {
+        if (isSuccessfullyApplied)
+            System.out.println("Congratulations " + this.name + ". Your passport was﻿ approved!");
+        else
+            System.out.println("We are sorry " + this.name + ". We cannot process your application!");
     }
 }

@@ -1,20 +1,32 @@
 package OOP.dealership;
 
 import java.text.DecimalFormat;
-import java.util.Arrays;
 
 public class main {
     public static void main(String[] args) {
+        Car[] cars = new Car[] {
+            new Car("Nissan", 5000, 2020, "red", new String[] {"tires", "keys"}),
+            new Car("Dodge", 8500, 2019, "blue", new String[] {"tires", "keys"}),
+            new Car("Nissan", 5000, 2017, "yellow", new String[] {"tires", "filter"}),
+            new Car("Honda", 7000, 2019, "orange", new String[] {"tires", "filter"}),
+            new Car("Mercedes", 12000, 2015, "jet black", new String[] {"tires", "filter", "transmission"})
+        };
+
+        cars[3].setColor("black");
+
+        Dealership dealership = new Dealership(cars);
+        dealership.displayCarsInfo();
+
         String carParts = "";
         String[] parts = new String[] {"Keys", "Tires"};
         Car nissan = new Car("Nissan", 36890, 2022, "white", parts);
 
-        nissan.displayCarInfo();
+        System.out.println(nissan);
 
         Car toyota = new Car("toyota", 36890, 2022, "white", parts);
         Car toyota2 = new Car(toyota);
 
-        toyota.displayCarInfo();
+        System.out.println(toyota);
         toyota.drive();
         toyota2.drive();
 

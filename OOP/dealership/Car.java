@@ -34,19 +34,17 @@ public class Car {
         this.parts = Arrays.copyOf(source.parts, source.parts.length);
     }
 
-    public void displayCarInfo() {
+    public String toString(){
         String carParts = "";
-        System.out.println("Below is car information: " + "\n\tMake: " + this.make + "\n\tPrice: $"
-                + new DecimalFormat("#.##").format(this.price) + "\n\tYear: "
-                + year + "\n\tColor: " + this.color);
-
         for (int i = 0; i < this.getParts().length; i++) {
             carParts += this.getParts()[i];
             if (i < this.getParts().length - 1)
                 carParts += ", ";
         }
 
-        System.out.println("\tParts: " + carParts.trim());
+        return "\nBelow is car information: " + "\n\tMake: " + this.make + "\n\tPrice: $"
+                + new DecimalFormat("#.##").format(this.price) + "\n\tYear: "
+                + year + "\n\tColor: " + this.color + "\n\tParts: " + carParts.trim();
     }
 
     public String getMake() {
