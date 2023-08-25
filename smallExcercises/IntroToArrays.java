@@ -1,5 +1,10 @@
 package smallExcercises;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class IntroToArrays {
     public static void main(String[] args) {
@@ -55,5 +60,29 @@ public class IntroToArrays {
         System.out.println(kindoms[1]);
         System.out.println(kindoms[2]);
         System.out.println(kindoms[3]);
+
+        List<String> alphabets = new ArrayList<>(Arrays.asList("aa", "bb", "ccc", "dddd"));
+        alphabets.forEach(s -> System.out.println(s));
+
+        alphabets.forEach(s -> System.out.print(s + ", "));
+
+        alphabets.forEach(System.out::println);
+        
+        alphabets.stream()
+        .filter(s -> s.startsWith("a"))
+        .forEach(System.out::println);
+
+        alphabets.stream()
+        .filter(s -> s.length() > 2)
+        .forEach(System.out::println);
+
+        alphabets.stream()
+        .mapToInt(s -> s.length())
+        .forEach(System.out::println);
+
+        List<Integer> ints = Stream.of(21,22,32,42,52).collect(Collectors.toList());
+        for(Integer i : ints){
+            System.out.println(i + ", ");
+        }
     }
 }
