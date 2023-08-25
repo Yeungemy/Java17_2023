@@ -1,4 +1,4 @@
-package OOP.carDeal;
+package OOP.dealership;
 
 import java.text.DecimalFormat;
 
@@ -13,6 +13,13 @@ public class Car {
         this.price = price;
         this.year = year;
         this.color = color;
+    }
+
+    public Car(Car source){
+        this.make = source.make;
+        this.price = source.price;
+        this.year = source.year;
+        this.color = source.color;
     }
 
     public void displayCarInfo() {

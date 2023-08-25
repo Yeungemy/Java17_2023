@@ -1,4 +1,4 @@
-package OOP.carDeal;
+package OOP.dealership;
 
 public class main {
     public static void main(String[] args) {
@@ -6,13 +6,14 @@ public class main {
 
         nissan.displayCarInfo();
 
-        Car toyoto = new Car("Toyoto", 36890, 2022, "white");
+        Car toyota = new Car("toyota", 36890, 2022, "white");
+        Car toyota2 = new Car(toyota);
 
         System.out.println("\nBelow is another car's information: ");
-        System.out.println("\tMake: " + toyoto.getMake());
-        System.out.println("\tPrice: " + toyoto.getPrice());
-        System.out.println("\tYear: " + toyoto.getYear());
-        System.out.println("\tColor: " + toyoto.getColor());
+        System.out.println("\tMake: " + toyota.getMake());
+        System.out.println("\tPrice: " + toyota.getPrice());
+        System.out.println("\tYear: " + toyota.getYear());
+        System.out.println("\tColor: " + toyota.getColor());
 
         Car audi = new Car(null, 0, 0, null);
 

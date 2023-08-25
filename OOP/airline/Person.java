@@ -1,7 +1,6 @@
 package OOP.airline;
 
 import java.util.Arrays;
-import java.util.function.Consumer;
 
 public class Person {
     private String name;
@@ -18,10 +17,18 @@ public class Person {
         this.passport = new String[] { name, nationality, dataOfBirth };
     }
 
+    public Person(Person people){
+        this.name = people.name;
+        this.nationality = people.nationality;
+        this.dataOfBirth = people.dataOfBirth;
+        this.seatNumber = people.seatNumber;
+        this.passport = new String[] { people.name, people.nationality, people.dataOfBirth };
+    }
+
     public void displayPersonInfo() {
         System.out.println("Below is personal information: " + "\n\tName: " + this.name + "\n\tNationality: "
                 + this.nationality + "\n\tData of Birth: " + this.dataOfBirth + "\n\tSeat #: " + this.seatNumber + "\n\tPassport: ");
-        Arrays.stream(this.passport).();
+        Arrays.stream(this.passport).forEach(s -> System.out.print(s + ", "));
     }
 
     public String getName() {

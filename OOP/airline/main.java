@@ -24,5 +24,12 @@ public class main {
         
         System.out.println("\tPassport: " + Arrays.toString(jimmy.getPassport()));
         // Arrays.stream(jimmy.getPassport()).forEach(item -> System.out.print("\t" + item + " "));
+
+        Person twin = new Person(jimmy);
+        twin.setName("Twin");
+        twin.setSeatNumber(3);
+
+        System.out.println("\n");
+        twin.displayPersonInfo();
     }
 }
