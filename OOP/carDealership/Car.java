@@ -1,4 +1,4 @@
-package OOP.dealership;
+package OOP.carDealership;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;

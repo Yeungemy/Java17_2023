@@ -1,4 +1,4 @@
-package OOP.dealership;
+package OOP.carDealership;
 
 public class Dealership {
     private Car[] cars;

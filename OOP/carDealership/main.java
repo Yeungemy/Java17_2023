@@ -1,4 +1,4 @@
-package OOP.dealership;
+package OOP.carDealership;
 import java.util.Scanner;
 
 public class main {
@@ -19,6 +19,7 @@ public class main {
         System.out.println("Feel free to browser out collection of cars as below: ");
         System.out.println(dealership);
 
+        // ensure user enter a correct park spot number
         do{
             try {
                 System.out.print("Enter parking spot number between 1 and 5: ");
@@ -39,7 +40,6 @@ public class main {
         // display new inventory
         System.out.println(dealership);
         
-
         scanner.close();
     }
 }
