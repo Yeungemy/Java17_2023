@@ -1,9 +1,10 @@
 package OOP.dealership;
-
-import java.text.DecimalFormat;
+import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int userInput = 99;
         Car[] cars = new Car[] {
             new Car("Nissan", 5000, 2020, "red", new String[] {"tires", "keys"}),
             new Car("Dodge", 8500, 2019, "blue", new String[] {"tires", "keys"}),
@@ -13,41 +14,32 @@ public class main {
         };
 
         cars[3].setColor("black");
-
         Dealership dealership = new Dealership(cars);
-        dealership.displayCarsInfo();
 
-        String carParts = "";
-        String[] parts = new String[] {"Keys", "Tires"};
-        Car nissan = new Car("Nissan", 36890, 2022, "white", parts);
+        System.out.println("Feel free to browser out collection of cars as below: ");
+        System.out.println(dealership);
 
-        System.out.println(nissan);
+        do{
+            try {
+                System.out.print("Enter parking spot number between 1 and 5: ");
+                String text = scanner.nextLine(); 
+                userInput = (Integer.parseInt(text) - 1);
+            } catch (NumberFormatException ime) {
+                System.out.println("Invalid input - numbers only please");
+            }
 
-        Car toyota = new Car("toyota", 36890, 2022, "white", parts);
-        Car toyota2 = new Car(toyota);
+        }while(userInput < 0 || userInput > 4);
 
-        System.out.println(toyota);
-        toyota.drive();
-        toyota2.drive();
+        // sell the car chosen by user
+        dealership.sellCar(userInput);
 
-        Car audi = new Car(null, 0, 0, null, parts);
+        // update inventory
+        dealership.removeCar(userInput);
 
-        audi.setMake("Audi");
-        audi.setPrice(40000.88);
-        audi.setYear(2014);
-        audi.setColor("white");
-
-        System.out.println("\nBelow is the third car's information: ");
-        System.out.println("\tMake: " + audi.getMake());
-        System.out.println("\tPrice: " + new DecimalFormat("#.##").format(audi.getPrice()));
-        System.out.println("\tYear: " + audi.getYear());
-        System.out.println("\tColor: " + audi.getColor());
+        // display new inventory
+        System.out.println(dealership);
         
-        for(int i = 0; i < audi.getParts().length; i++){
-            carParts += audi.getParts()[i];
-            if( i < audi.getParts().length - 1) carParts += ", ";
-        }
-        System.out.println("\tParts: " + carParts.trim());
-        audi.drive();
+
+        scanner.close();
     }
 }

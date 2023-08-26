@@ -42,7 +42,7 @@ public class Car {
                 carParts += ", ";
         }
 
-        return "\nBelow is car information: " + "\n\tMake: " + this.make + "\n\tPrice: $"
+        return "\tMake: " + this.make + "\n\tPrice: $"
                 + new DecimalFormat("#.##").format(this.price) + "\n\tYear: "
                 + year + "\n\tColor: " + this.color + "\n\tParts: " + carParts.trim();
     }
