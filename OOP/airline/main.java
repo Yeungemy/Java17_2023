@@ -1,39 +1,33 @@
 package OOP.airline;
-
-import java.util.Arrays;
-
 public class main {
+    
     public static void main(String[] args) {
-        Person ryan = new Person( "Ryan Slim", "Canadian", "01/01/1978", 5);
-        System.out.println(ryan);;
-        ryan.displayPassportApplyResult(ryan.applyPassport());
+        Person[] people = new Person[] { 
+            new Person("Cleopatra", "Egypt", "69 BC", 1),
+            new Person("Alexander the Great", "Macedon", "356 BC", 2),
+            new Person("Julius Caesar", "Rome", "100 BC", 3),
+            new Person("Hannibal", "Carthage", "247 BC", 4),
+            new Person("Confucius", "China", "551 BC", 5),
+            new Person("Pericles", "Greece", "429 BC", 6),
+            new Person("Spartacus", "Thrace", "111 BC", 7),
+            new Person("Marcus Aurelius", "Rome", "121 AD", 8),
+            new Person("Leonidas", "Greece", "540 BC", 9),
+            new Person("Sun Tzu", "China", "544 BC", 10),
+            new Person("Hammurabi", "Babylon", "1750 BC", 11),
+        };
 
-        Person jimmy = new Person(null, null, null, 0);
-
-        jimmy.setName("Jimmy Green");
-        jimmy.setDataOfBirth("01/02/1234");
-        jimmy.setNationality("Chinese");
-        jimmy.setPassport();
-
-        System.out.println("\n");
-        System.out.println(jimmy);
-        jimmy.displayPassportApplyResult(jimmy.applyPassport());
-
-        System.out.println("\nBelow is a personal information of " + jimmy.getName() + ":");
-        System.out.println("\tNationality: " + jimmy.getNationality());
-        System.out.println("\tData of Birth: " + jimmy.getDataOfBirth());
+        // Airline airline = new Airline(); 
         
-        System.out.println("\tPassport: " + Arrays.toString(jimmy.getPassport()));
-        // Arrays.stream(jimmy.getPassport()).forEach(item -> System.out.print("\t" + item + " "));
-        jimmy.displayPassportApplyResult(jimmy.applyPassport());
+        // // populate the airline
+        // for(int i = 0; i < people.length; i++){
+        //     airline.setPersonByIndex(people[i]);
+        //     System.out.println(airline.getPersonByIndexByIndex(i));
+        // }
 
-        Person twin = new Person(jimmy);
-        twin.setName("Twin Green");
-        twin.setSeatNumber(3);
-        twin.setPassport();
+        Airline airline = new Airline(people);
 
-        System.out.println("\n");
-        System.out.println(twin);
-        twin.displayPassportApplyResult(twin.applyPassport());
-    }
+        System.out.println(airline.getPersonByIndex(1));
+        System.out.println(airline.getPersonByIndex(5));
+        System.out.println(airline.getPersonByIndex(10));
+    } 
 }

@@ -26,7 +26,7 @@ public class Person {
     }
 
     public String toString() {
-        return "Below is personal information of " + this.name + ":\n\tNationality: "
+        return "\npersonal information of " + this.name + ":\n\tNationality: "
                 + this.nationality + "\n\tData of Birth: " + this.dataOfBirth + "\n\tSeat #: " + this.seatNumber
                 + "\n\tPassport: " + Arrays.toString(this.passport);
     }
