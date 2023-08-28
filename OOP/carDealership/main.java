@@ -16,7 +16,7 @@ public class main {
         cars[3].setColor("black");
         Dealership dealership = new Dealership(cars);
 
-        System.out.println("Feel free to browser out collection of cars as below: ");
+        System.out.println("Feel free to browser our collection of cars as below: ");
         System.out.println(dealership);
 
         // ensure user enter a correct park spot number
@@ -31,14 +31,16 @@ public class main {
 
         }while(userInput < 0 || userInput > 4);
 
+        System.out.println("\nYor are going to buy the following car at parking spot #" + userInput + ": \n" + dealership.getCar(userInput) + "\n\n");
+
         // sell the car chosen by user
         dealership.sellCar(userInput);
-
+        
         // update inventory
-        dealership.removeCar(userInput);
+        dealership.removeCar(userInput);     
 
         // display new inventory
-        System.out.println(dealership);
+        System.out.println("\nFeel free to browser our new collection of cars as below: \n" + dealership);
         
         scanner.close();
     }
