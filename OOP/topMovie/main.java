@@ -25,14 +25,13 @@ public class main {
 
         Store store = new Store();
 
-        System.out.println("******************************MOVIE STORE*************************************");
-
+        // populate movies to the store
         for (int i = 0; i < movies.length; i++) {
             store.setMovieByIndex(i, movies[i]);
-            System.out.println(store.getMovieByIndex(i));
         }
 
-        System.out.println("******************************************************************************");
+        // print store movie inventory
+        store.printStore();
 
         do {
             while (movieId < 0 || movieId > 9) {
@@ -52,13 +51,17 @@ public class main {
             while (newRating < 0 || newRating > 10) {
                 try {
                     // extract user new rating
-                    System.out.print("Set a new rating for '" + selectedMovie.getName() + "': ");
+                    System.out.print("Set a new rating for '" + selectedMovie.getName() + "' between 0 and 10: ");
                     String userInput = scanner.next();
                     newRating = Double.parseDouble(userInput);
 
                     // keep rating with only one decimal
                     DecimalFormat numberFormat = new DecimalFormat("#.0");
                     newRating = Double.parseDouble(numberFormat.format(newRating));
+
+                    if(newRating < 0 || newRating > 10){
+                        System.out.println("The new rating is outside of valid range!");
+                    }
                 } catch (NumberFormatException e) {
                     System.out.println("Invalid number and please try again!");
                 }
