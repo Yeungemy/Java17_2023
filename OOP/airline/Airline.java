@@ -3,7 +3,7 @@ package OOP.airline;
 import java.util.Arrays;
 
 public class Airline {
-    Person[] persons;
+    private Person[] persons;
 
     // a constructor without any parameters
     public Airline() {
