@@ -1,6 +1,5 @@
 package OOP.topMovie;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 import shared.Shared;

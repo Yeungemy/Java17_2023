@@ -3,6 +3,8 @@ package shared;
 import java.util.Scanner;
 
 import java.text.DecimalFormat;
+import java.time.LocalDate;
+import java.time.Period;
 
 public final class Shared {
     public String decimalFormat(double value, int decimalDigit) {
@@ -13,11 +15,11 @@ public final class Shared {
         }
 
         DecimalFormat numberFormat = new DecimalFormat(formatStr);
-        
+
         return numberFormat.format(value);
     }
 
-    public int userInputIntegerNumber(Scanner scanner, int minVal, int maxVal) {
+    public static int userInputIntegerNumber(Scanner scanner, int minVal, int maxVal) {
         int tempVal = maxVal + 1;
 
         while (tempVal < minVal || tempVal > maxVal) {
@@ -37,7 +39,7 @@ public final class Shared {
         return tempVal;
     }
 
-    public double userInputDoubleValue(Scanner scanner, double minVal, double maxVal, int decimalDigit) {
+    public static double userInputDoubleValue(Scanner scanner, double minVal, double maxVal, int decimalDigit) {
         double tempVal = maxVal + 1;
 
         while (tempVal < minVal || tempVal > maxVal) {
@@ -56,5 +58,13 @@ public final class Shared {
         }
 
         return tempVal;
+    }
+
+    public static int calculateAge(LocalDate birthDate, LocalDate currentDate) {
+        if ((birthDate != null) && (currentDate != null)) {
+            return Period.between(birthDate, currentDate).getYears();
+        } else {
+            return 0;
+        }
     }
 }
