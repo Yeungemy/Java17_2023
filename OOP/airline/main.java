@@ -13,21 +13,22 @@ public class main {
             new Person("Marcus Aurelius", "Rome", "121 AD", 8),
             new Person("Leonidas", "Greece", "540 BC", 9),
             new Person("Sun Tzu", "China", "544 BC", 10),
-            new Person("Hammurabi", "Babylon", "1750 BC", 11),
+            new Person("Hammurabi", "Babylon", "1750 BC", 10),
         };
 
-        // Airline airline = new Airline(); 
+        Airline airline = new Airline(); 
         
-        // // populate the airline
-        // for(int i = 0; i < people.length; i++){
-        //     airline.setPersonByIndex(people[i]);
-        //     System.out.println(airline.getPersonByIndexByIndex(i));
-        // }
+        // populate the airline
+        for(int i = 0; i < people.length; i++){
+            // airline.setPersonByIndex(people[i]);
+            // System.out.println(airline.getPersonByIndex(i));
+            airline.createReservation(people[i]);
+        }
 
-        Airline airline = new Airline(people);
+        // Airline airline = new Airline(people);
 
-        System.out.println(airline.getPersonByIndex(1));
-        System.out.println(airline.getPersonByIndex(5));
-        System.out.println(airline.getPersonByIndex(10));
+        // System.out.println(airline.getPersonByIndex(1));
+        // System.out.println(airline.getPersonByIndex(5));
+        // System.out.println(airline.getPersonByIndex(10));
     } 
 }
