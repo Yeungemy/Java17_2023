@@ -23,12 +23,12 @@ public class Airline {
             person.setPassport();
 
             while (this.persons[person.getSeatNumber() - 1] != null) {
-                // choose a new seat
-                person.chooseSeat();
-
                 // kind remind the seat is not vacant
                 System.out.println("\n" + person.getName() + ", seat: " + person.getSeatNumber()
                         + " is already taken. Please choose another seat.\n");
+
+                // choose a new seat
+                person.chooseSeat();
             }
 
             // populate the reservation
@@ -36,7 +36,7 @@ public class Airline {
 
             // issue a message of successful reservation
             System.out.println("Thank you " + person.getName() + " for flying with Java airlines. Your seat number is "
-                    + (person.getSeatNumber() + 1) + ".\n");
+                    + (person.getSeatNumber()) + ".\n");
         } else {
             // remind the passport is not valid
             System.out.println("Sorry " + person.getName() + ". Your passport: "
