@@ -10,7 +10,7 @@ public class main {
         int movieId = 100;
         double newRating = 11.0;
         Scanner scanner = new Scanner(System.in);
-        String isContinue = "continue";
+        char isContinue = 'y';
         Shared shared = new Shared();
 
         Movie[] movies = new Movie[] {
@@ -29,9 +29,7 @@ public class main {
         Store store = new Store();
 
         // populate movies to the store
-        for (int i = 0; i < movies.length; i++) {
-            store.setMovieByIndex(i, movies[i]);
-        }
+        store.setMovies(movies);
 
         // print store movie inventory
         store.printStore();
@@ -54,9 +52,9 @@ public class main {
             store.setMovieByIndex(movieId, selectedMovie);
 
             // prompt user for continue to edit rating of other moives
-            System.out.print("To edit another rating, type: 'continue': ");
-            isContinue = scanner.next();
-        } while (isContinue.trim().toLowerCase().equals("continue"));
+            System.out.print("To edit another rating, type 'Y' or 'y' for yes to continue: ");
+            isContinue = scanner.next().charAt(0);
+        } while (Character.toUpperCase(isContinue) == 'Y');
 
         // print store moive info with new ratings
         store.printStore();

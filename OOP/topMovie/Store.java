@@ -30,4 +30,10 @@ public class Store {
     public void setMovieByIndex(int index, Movie movie) {
         this.movies[index] = new Movie(movie);
     }
+
+    public void setMovies(Movie[] movies){
+        for (int i = 0; i < movies.length; i++) {
+           setMovieByIndex(i, movies[i]);
+        }
+    }
 }
