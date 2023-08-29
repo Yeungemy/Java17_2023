@@ -24,7 +24,7 @@ public class Airline {
 
             while (this.persons[person.getSeatNumber() - 1] != null) {
                 // kind remind the seat is not vacant
-                System.out.println("\n" + person.getName() + ", seat: " + person.getSeatNumber()
+                System.out.println(person.getName() + ", seat: " + person.getSeatNumber()
                         + " is already taken. Please choose another seat.\n");
 
                 // choose a new seat
