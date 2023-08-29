@@ -60,7 +60,7 @@ public class main {
                     newRating = Double.parseDouble(userInput);
 
                     // keep rating with only one decimal
-                    DecimalFormat numberFormat = new DecimalFormat("#.0");
+                    DecimalFormat numberFormat = new DecimalFormat("#0.0");
                     newRating = Double.parseDouble(numberFormat.format(newRating));
 
                     if(newRating < 0 || newRating > 10){

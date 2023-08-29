@@ -12,15 +12,15 @@ public class Store {
     public String toStrig(){
         String movieStr = "";
         for(Movie movie : this.movies){
-            movieStr += movie + "\n";
+            movieStr += "\t" + movie + "\n";
         }
         return movieStr;
     }
 
     public void printStore(){
-        System.out.println("******************************MOVIE STORE*************************************");
+        System.out.println("******************************************************MOVIE STORE******************************************************\n");
         System.out.println(toStrig());
-        System.out.println("******************************************************************************");
+        System.out.println("***********************************************************************************************************************");
     }
 
     public Movie getMovieByIndex(int index) {
