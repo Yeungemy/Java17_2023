@@ -39,6 +39,10 @@ public class main {
                     System.out.print("Please choose a movie ID number from 1 to 10: ");
                     String userInput = scanner.next();
                     movieId = Integer.parseInt(userInput) - 1;
+
+                    if(movieId < 0 || movieId > 9){
+                        System.out.println("The movie ID is outside of valid range!");
+                    }
                 } catch (NumberFormatException e) {
                     System.out.println("Invalid number and please try again!");
                 }
