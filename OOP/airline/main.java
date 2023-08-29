@@ -20,15 +20,22 @@ public class main {
         
         // populate the airline
         for(int i = 0; i < people.length; i++){
-            // airline.setPersonByIndex(people[i]);
-            // System.out.println(airline.getPersonByIndex(i));
+            /**
+             * populate by set method
+             * airline.setPersonByIndex(people[i]);
+             * System.out.println(airline.getPersonByIndex(i));
+             */
+            
+             // populate by createReservation method
             airline.createReservation(people[i]);
         }
 
-        // Airline airline = new Airline(people);
-
-        // System.out.println(airline.getPersonByIndex(1));
-        // System.out.println(airline.getPersonByIndex(5));
-        // System.out.println(airline.getPersonByIndex(10));
+        /**
+         * populate by a constructer with a parameter of soure data
+         * Airline airline = new Airline(people);
+         * System.out.println(airline.getPersonByIndex(1));
+         * System.out.println(airline.getPersonByIndex(5));
+         * System.out.println(airline.getPersonByIndex(10));
+         */
     } 
 }
