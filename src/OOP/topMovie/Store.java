@@ -7,7 +7,7 @@ public class Store {
         this.movies = new Movie[10];
     }
 
-    public String toStrig() {
+    public String toString() {
         String movieStr = "";
         for (Movie movie : this.movies) {
             movieStr += "\t" + movie + "\n";
@@ -18,7 +18,7 @@ public class Store {
     public void printStore() {
         System.out.println(
                 "******************************************************MOVIE STORE******************************************************\n");
-        System.out.println(toStrig());
+        System.out.println(toString());
         System.out.println(
                 "***********************************************************************************************************************");
     }

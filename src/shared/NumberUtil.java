@@ -1,13 +1,17 @@
 package shared;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
 
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 
-public final class Shared {
-    public String decimalFormat(double value, int decimalDigit) {
+public final class NumberUtil {
+    public static String decimalFormat(double value, int decimalDigit) {
         String formatStr = "#.";
 
         for (int i = 0; i < decimalDigit; i++) {
@@ -19,7 +23,7 @@ public final class Shared {
         return numberFormat.format(value);
     }
 
-    public static int userInputIntegerNumber(Scanner scanner, int minVal, int maxVal) {
+    public int userInputIntegerNumber(Scanner scanner, int minVal, int maxVal) {
         int tempVal = maxVal + 1;
 
         while (tempVal < minVal || tempVal > maxVal) {
@@ -60,11 +64,34 @@ public final class Shared {
         return tempVal;
     }
 
-    public static int calculateAge(LocalDate birthDate, LocalDate currentDate) {
-        if ((birthDate != null) && (currentDate != null)) {
-            return Period.between(birthDate, currentDate).getYears();
-        } else {
-            return 0;
+    private int getAge(String dobString){
+
+        Date date = null;
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            date = sdf.parse(dobString);
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
-    }
+
+        if(date == null) return 0;
+
+        Calendar dob = Calendar.getInstance();
+        Calendar today = Calendar.getInstance();
+
+        dob.setTime(date);
+
+        int year = dob.get(Calendar.YEAR);
+        int month = dob.get(Calendar.MONTH);
+        int day = dob.get(Calendar.DAY_OF_MONTH);
+
+        dob.set(year, month+1, day);
+
+        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+
+        if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+            age--;
+        }
+        return age;
+}
 }

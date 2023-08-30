@@ -2,7 +2,7 @@ package OOP.topMovie;
 
 import java.util.Scanner;
 
-import shared.Shared;
+import shared.NumberUtil;
 
 public class main {
     public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class main {
         double newRating = 11.0;
         Scanner scanner = new Scanner(System.in);
         char isContinue = 'y';
-        Shared shared = new Shared();
+        NumberUtil shared = new NumberUtil();
 
         Movie[] movies = new Movie[] {
                 new Movie("The Shawshank Redemption", "BlueRay", 9.2),

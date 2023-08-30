@@ -1,18 +1,30 @@
 package shared;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import org.junit.Assert;
 
 public class SharedTest {
-     @Test
+    @Test
     public void SharedTest_Success() {
-        Shared shared = new Shared();
+        final String CUSTOM_PATTERN = "MM-dd-yyyy";
+		
+
+        DateUtil sharedDateUtil = new DateUtil();
         // setup
-        LocalDate birthDate = LocalDate.of(1961, 5, 17);
+        String birthDate = "1961-5-17";
         // exercise
-        int actual = shared.calculateAge(birthDate, LocalDate.of(2016, 7, 12));
+        int actual = sharedDateUtil.calculateAge(birthDate);
+
         // assert
         Assert.assertEquals(55, actual);
+
+        LocalDate parsedLocalDate = sharedDateUtil.parseLocalDate("01-26-2023", CUSTOM_PATTERN);
+
+        Assert.assertNotNull(parsedLocalDate);
+        Assert.assertEquals(26, parsedLocalDate.getDayOfMonth());
+        Assert.assertEquals(1, parsedLocalDate.getMonthValue());
+        Assert.assertEquals(2023, parsedLocalDate.getYear());
     }
 }
