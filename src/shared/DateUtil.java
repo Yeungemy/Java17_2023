@@ -1,16 +1,23 @@
 package shared;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.Date;
 import java.util.Scanner;
 
 public class DateUtil {
+        private static boolean checkDate(String date) {
+        String pattern = "^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$";
+        boolean flag = false;
+        if (date.matches(pattern)) {
+            flag = true;
+        }
+        return flag;
+    }
+
     /**
      * 
      * @param date       - date string
@@ -33,15 +40,6 @@ public class DateUtil {
         return status;
     }
 
-    private static boolean checkDate(String date) {
-        String pattern = "^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$";
-        boolean flag = false;
-        if (date.matches(pattern)) {
-            flag = true;
-        }
-        return flag;
-    }
-
     public LocalDate parseLocalDate(String dateStr, String dateFormat) {
         LocalDate date = null;
         final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern(dateFormat);
@@ -50,23 +48,6 @@ public class DateUtil {
             date = LocalDate.parse(dateStr, DATE_TIME_FORMATTER);
         } catch (DateTimeParseException e) {
             // handle exception
-            e.printStackTrace();
-        }
-        return date;
-    }
-
-    /**
-     * @param {String} strDate
-     * @param {String} dateFormat For example MM-dd-yyyy, MM.dd.yyyy, dd.MM.yyyy etc
-     * @return {boolean}
-     */
-    public Date parseSimpleDate(String dateString, String dateFormat) {
-        Date date = null;
-        DateFormat sdf = new SimpleDateFormat(dateFormat);
-        sdf.setLenient(false);
-        try {
-            date = sdf.parse(dateString);
-        } catch (ParseException e) {
             e.printStackTrace();
         }
         return date;
@@ -110,9 +91,7 @@ public class DateUtil {
      * @param dob - The date of birth in YYYY-MM-DD
      * @return age
      */
-    public int calculateAge(String dob) {
-        LocalDate dob_1 = LocalDate.parse(dob);
-        LocalDate curDate = LocalDate.now();
-        return Period.between(dob_1, curDate).getYears();
+    public int calculateAge(String dob, String dateformat) {
+        return Period.between(parseLocalDate(dob, dateformat), LocalDate.now()).getYears();
     }
 }
