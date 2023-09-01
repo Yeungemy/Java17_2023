@@ -76,7 +76,7 @@ public class ContactManager {
         String newPhoneNumber = scanner.next();
         this.contacts[index].setPhoneNumber(newPhoneNumber);
 
-        System.out.print("\tPlease enter a new Birthdate: ");
+        System.out.print("\tPlease enter a new Birthdate in a date format " + dateformat + ": ");
 
         // pick up birth date
         String newBod = (sharedDateUtil.enterDate(scanner, dateformat)).toString();

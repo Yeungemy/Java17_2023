@@ -1,5 +1,9 @@
 package OOP.contact;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
 import shared.DateUtil;
 
 public class Contact {
@@ -13,16 +17,14 @@ public class Contact {
     public Contact(String name, String phoneNumber, String birthdate) {
         this.name = name;
         this.phoneNumber = phoneNumber;
-        this.birthdate = birthdate;
-        this.age = toAge(this.birthdate);
+        setBirthdate(birthdate);
     }
 
     // Create a constructor that initializes a new object using an existing object's fields.
     public Contact(Contact source){
         this.name = source.name;
         this.phoneNumber = source.phoneNumber;
-        this.birthdate = source.birthdate;
-        this.age = source.age;
+        setBirthdate(source.birthdate);
     }
 
     public String toString(){
@@ -55,18 +57,15 @@ public class Contact {
 
     public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
-        setAge();
+        toAge();
     }
 
     public int getAge() {
         return this.age;
     }
 
-    private void setAge() {
-        this.age = shared.calculateAge(this.birthdate);
-    }
-
-    public int toAge(String birthDate) {
-        return shared.calculateAge(birthDate);
+    private void toAge() {
+		LocalDate dob = LocalDate.parse(this.birthdate);
+		this.age = Period.between(dob, LocalDate.now()).getYears();
     }
 }

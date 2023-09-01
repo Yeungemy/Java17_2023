@@ -15,7 +15,7 @@ public class SharedTest {
         // setup
         String birthDate = "1961-5-17";
         // exercise
-        int actual = sharedDateUtil.calculateAge(birthDate);
+        int actual = sharedDateUtil.calculateAge(birthDate, CUSTOM_PATTERN);
 
         // assert
         Assert.assertEquals(55, actual);
