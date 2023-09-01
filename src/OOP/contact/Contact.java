@@ -2,9 +2,9 @@ package OOP.contact;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.format.DateTimeFormatter;
 
 import shared.DateUtil;
+import shared.SharedUtil;
 
 public class Contact {
     private String name;
@@ -12,6 +12,8 @@ public class Contact {
     private String birthdate;
     private int age;
     DateUtil shared = new DateUtil();
+    SharedUtil sharedUtil = new SharedUtil();
+    
 
     // Create a constructor that initializes the fields of a newly created object.
     public Contact(String name, String phoneNumber, String birthdate) {
@@ -65,7 +67,9 @@ public class Contact {
     }
 
     private void toAge() {
-		LocalDate dob = LocalDate.parse(this.birthdate);
-		this.age = Period.between(dob, LocalDate.now()).getYears();
+        LocalDate dob = LocalDate.parse(this.birthdate);
+        LocalDate today = LocalDate.now();
+
+        this.age = Period.between(dob, today).getYears();
     }
 }

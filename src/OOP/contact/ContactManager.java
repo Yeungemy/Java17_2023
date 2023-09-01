@@ -4,10 +4,12 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import shared.DateUtil;
+import shared.PhoneNoUtil;
 
 public class ContactManager {
     private Contact[] contacts;
     DateUtil sharedDateUtil = new DateUtil();
+    PhoneNoUtil phoneNoUtil = new PhoneNoUtil();
 
     public ContactManager(Contact[] contacts){
         Contact[] temp = new Contact[contacts.length];
@@ -63,7 +65,7 @@ public class ContactManager {
         return contactData();
     }
 
-    public void editContact(Scanner scanner, int index, String dateformat) {
+    public void editContact(Scanner scanner, int index, String dateformat, String separator) {
         System.out.print("\tPlease enter a new name: ");
 
         // pick up name
@@ -73,13 +75,13 @@ public class ContactManager {
         System.out.print("\tPlease enter a new Phone Number: ");
 
         // pick up number
-        String newPhoneNumber = scanner.next();
+        String newPhoneNumber = phoneNoUtil.userInputPhoneNumber(scanner, null);
         this.contacts[index].setPhoneNumber(newPhoneNumber);
 
-        System.out.print("\tPlease enter a new Birthdate in a date format " + dateformat + ": ");
+        System.out.print("\tPlease enter a new Birthdate - ");
 
         // pick up birth date
-        String newBod = (sharedDateUtil.enterDate(scanner, dateformat)).toString();
+        String newBod = (sharedDateUtil.userInputDate(scanner, dateformat, separator));
         this.contacts[index].setBirthdate(newBod);
     }
 }

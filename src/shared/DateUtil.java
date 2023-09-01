@@ -72,6 +72,7 @@ public class DateUtil {
         
         ArrayList<Integer> dateValues = userInputDateValues(scanner);
         dateStr = composeDateString(dateValues, format, separator);
+        System.out.println(dateStr);
 
         return dateStr;
     }
@@ -200,7 +201,8 @@ public class DateUtil {
      * @return age
      */
     public int calculateAge(String dob, String datePattern) {
-        DateTimeFormatter df = DateTimeFormatter.ofPattern(datePattern);
-        return Period.between(LocalDate.parse(dob, df), LocalDate.now()).getYears();
+       LocalDate dt = parseLocalDate(dob, datePattern);
+
+        return Period.between(dt, LocalDate.now()).getYears();
     }
 }
