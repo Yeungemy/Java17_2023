@@ -2,6 +2,7 @@ package OOP.contact;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 import shared.DateUtil;
 import shared.SharedUtil;
@@ -67,7 +68,7 @@ public class Contact {
     }
 
     private void toAge() {
-        LocalDate dob = LocalDate.parse(this.birthdate);
+        LocalDate dob = LocalDate.parse(this.birthdate, DateTimeFormatter.ofPattern("yyy-MM-dd"));
         LocalDate today = LocalDate.now();
 
         this.age = Period.between(dob, today).getYears();

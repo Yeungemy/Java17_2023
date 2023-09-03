@@ -13,7 +13,7 @@ public class main {
         int indexOfContact = 0;
         ContactManager contactManager = new ContactManager();
         final int numOfContacts = contactManager.getContacts().length;
-        final String dateFormat = "yyyy-m-dd";
+        final String dateFormat = "yyyy-mm-dd";
         String separator = "-";
 
         // print all contacts
