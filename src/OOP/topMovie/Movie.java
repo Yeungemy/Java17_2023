@@ -39,11 +39,11 @@ public class Movie {
         this.format = format;
     }
 
-    public double getrating() {
+    public double getRating() {
         return this.rating;
     }
 
-    public void setrating(double rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 }

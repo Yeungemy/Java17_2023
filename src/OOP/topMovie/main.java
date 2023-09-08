@@ -28,7 +28,7 @@ public class main {
         Store store = new Store();
 
         // populate movies to the store
-        store.setMovies(movies);
+        store.addMovies(movies);
 
         // print store movie inventory
         store.printStore();
@@ -38,17 +38,17 @@ public class main {
             movieId = shared.userInputIntegerNumber(scanner, 0, 9);
 
             // Grab a movie from the store based on the user input
-            Movie selectedMovie = store.getMovieByIndex(movieId);
+            Movie selectedMovie = store.getMovie(movieId);
             System.out.println("Below is the movie you have chosen: \n'" + selectedMovie + "'.");
 
             // prompt for a new rating of the chosen moive
             newRating = shared.userInputDoubleValue(scanner, 0, 10, 1);
 
             // update with new rating
-            selectedMovie.setrating(newRating);
+            selectedMovie.setRating(newRating);
 
             // update store with new rating for that movie
-            store.setMovieByIndex(movieId, selectedMovie);
+            store.setMovie(movieId, selectedMovie);
 
             // prompt user for continue to edit rating of other moives
             System.out.print("To edit another rating, type 'Y' or 'y' for yes to continue: ");
