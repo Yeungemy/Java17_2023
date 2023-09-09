@@ -1,4 +1,5 @@
 package OOP.topMovie;
+import java.util.Objects;
 
 public class Movie {
     private String name;
@@ -46,4 +47,20 @@ public class Movie {
     public void setRating(double rating) {
         this.rating = rating;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Movie)) {
+            return false;
+        }
+        Movie movie = (Movie) o;
+        return Objects.equals(name, movie.name) && Objects.equals(format, movie.format) && rating == movie.rating;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, format, rating);
+    }    
 }

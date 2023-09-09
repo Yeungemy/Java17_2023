@@ -58,6 +58,10 @@ public class main {
         // print store moive info with new ratings
         store.printStore();
 
+        store.removeMovies();
+
+        store.printStore();
+
         scanner.close();
     }
 }
