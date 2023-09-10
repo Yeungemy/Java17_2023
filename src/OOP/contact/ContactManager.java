@@ -1,5 +1,4 @@
 package OOP.contact;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -41,7 +40,7 @@ public class ContactManager {
     }
 
     public Contact geContactByIndex(int index){
-        return this.contacts[index];
+        return new Contact(this.contacts[index]);
     }
 
     public void setContactByIndex(int index, Contact contact){
@@ -62,7 +61,8 @@ public class ContactManager {
     }
 
     public Contact[] getContacts(){
-        return contactData();
+        Contact[] tempCopy = Arrays.copyOf(contactData(), contactData().length);
+        return tempCopy;
     }
 
     public void editContact(Scanner scanner, int index, String dateformat, String separator) {

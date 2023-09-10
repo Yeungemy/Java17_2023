@@ -29,23 +29,17 @@ public class Store {
 
     /** fetch movie by index */
     public Movie getMovie(int index) {
-        return this.movies.get(index);
+        return new Movie(this.movies.get(index));
     }
 
     /** update movies */
     public void setMovie(int index, Movie movie) {
-        try{
-            if( index >= 0 || index < this.movies.size()){
-                this.movies.set(index, movie);
-            }   
-        }catch(IndexOutOfBoundsException e){
-
-        }  
+        this.movies.set(index, new Movie(movie)); 
     }
 
     /** insert moive */
     public void addMovie(Movie movie){
-        this.movies.add(movie);
+        this.movies.add(new Movie(movie));
     }
 
     /** insert movies in batch */

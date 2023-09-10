@@ -68,7 +68,6 @@ public class Book {
         return "'" + this.title + "' written by " + this.author + " is rated " + new DecimalFormat("#.##").format(this.rating) + " and sold for $" + new DecimalFormat("#.##").format(this.price); 
     }
 
-    @Override
     public boolean equals(Object o) {
         if (o == this)
             return true;
@@ -78,9 +77,4 @@ public class Book {
         Book book = (Book) o;
         return Objects.equals(title, book.title) && Objects.equals(author, book.author) && rating == book.rating && price == book.price;
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(title, author, rating, price);
-    } 
 }

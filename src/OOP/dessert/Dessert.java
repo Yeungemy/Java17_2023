@@ -24,5 +24,4 @@ public class Dessert {
     public void setIngredients(String[] ingredients) {
         this.ingredients = Arrays.copyOf(ingredients, ingredients.length);
     }
- 
 }

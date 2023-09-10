@@ -8,8 +8,7 @@ public class Dealership {
     }
 
     public void setCar(Car car, int index) {
-        Car copy = new Car(car);
-        this.cars[index] = copy;
+        this.cars[index] = new Car(car);
     }
 
     public Dealership(Car[] cars){

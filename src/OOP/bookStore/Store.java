@@ -14,7 +14,7 @@ public class Store {
      * @return returns a deep copy of the Book object at that index
      */
     public Book getBook(int index){
-        return this.books.get(index);
+        return new Book(this.books.get(index));
     }
 
     /** Create a setBook method that takes a Book object and an index as parameters and sets the Book object at the specified index to a deep copy of the given object  
@@ -22,11 +22,11 @@ public class Store {
      * @param {Book} book - the Book object
      */
     public void setBook(int index, Book book){
-        this.books.set(index, book);
+        this.books.set(index, new Book(book));
     }
 
     public void addBook(Book book){
-        this.books.add(book);
+        this.books.add(new Book(book));
     }
 
     public boolean contains(Book book){
