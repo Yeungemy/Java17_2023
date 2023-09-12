@@ -11,7 +11,8 @@ public class Store {
     private List<Movie> movies;
 
     public Store() {
-        this.movies = new ArrayList<Movie>(){};
+        this.movies = new ArrayList<Movie>() {
+        };
     }
 
     public String toString() {
@@ -25,7 +26,13 @@ public class Store {
     public void printStore() {
         System.out.println(
                 "******************************************************MOVIE STORE******************************************************\n");
-        System.out.println(toString());
+        
+        if (this.movies.size() > 0) {
+            System.out.println(toString());
+        } else {
+            System.out.println("Sorry, We are running out of inventory");
+        }
+
         System.out.println(
                 "***********************************************************************************************************************");
     }
@@ -37,37 +44,38 @@ public class Store {
 
     /** update movies */
     public void setMovie(int index, Movie movie) {
-        this.movies.set(index, new Movie(movie)); 
+        this.movies.set(index, new Movie(movie));
     }
 
     /** insert moive */
-    public void addMovie(Movie movie){
+    public void addMovie(Movie movie) {
         this.movies.add(new Movie(movie));
     }
 
     /** insert movies in batch */
-    public void addMovies(Movie[] movies){
+    public void addMovies(Movie[] movies) {
         for (int i = 0; i < movies.length; i++) {
-           addMovie(movies[i]);
+            addMovie(movies[i]);
         }
     }
 
-    /** update movies in batch  */
-    public void setMovies(Movie[] movies){
+    /** update movies in batch */
+    public void setMovies(Movie[] movies) {
         for (int i = 0; i < movies.length; i++) {
-           setMovie(i, movies[i]);
+            setMovie(i, movies[i]);
         }
     }
 
     /** remove a movie */
-    public void removeMovie(int index){
+    public void removeMovie(int index) {
         this.movies.remove(index);
     }
 
     /** remove all movies */
-    public void removeMovies(){
-        // System.out.println("Currently have " + this.movies.size() + " movies in our store.");
-        if(this.movies.size() > 0){
+    public void removeMovies() {
+        // System.out.println("Currently have " + this.movies.size() + " movies in our
+        // store.");
+        if (this.movies.size() > 0) {
             removeMovie(0);
             removeMovies();
         }
@@ -75,23 +83,24 @@ public class Store {
 
     /**
      * Load movies from a file
+     * 
      * @param {String} filePath - the path of a file
      * @param {String} seporator - the seporator of each field
      * @throws FileNotFoundException
      */
-    public void loadMovies(String filePath, String seporator) throws FileNotFoundException{
-        if(filePath == null || filePath.isBlank()){
+    public void loadMovies(String filePath, String seporator) throws FileNotFoundException {
+        if (filePath == null || filePath.isBlank()) {
             throw new IllegalArgumentException("File path cannot be null or blank!");
         }
 
-        if(seporator == null || seporator.isBlank()){
+        if (seporator == null || seporator.isBlank()) {
             throw new IllegalArgumentException("Seporator path cannot be null or blank!");
         }
 
         FileInputStream fis = new FileInputStream(filePath);
         Scanner scanner = new Scanner(fis);
 
-        while(scanner.hasNextLine()){
+        while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
 
             String[] data = line.split(seporator);
@@ -116,5 +125,5 @@ public class Store {
     @Override
     public int hashCode() {
         return Objects.hash(movies);
-    }    
+    }
 }
