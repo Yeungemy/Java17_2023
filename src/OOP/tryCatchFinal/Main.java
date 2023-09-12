@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import shared.FileCrud;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         String fileName = "src/assets/cards.txt";
         FileCrud file = new FileCrud();

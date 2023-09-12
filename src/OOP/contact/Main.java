@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import shared.NumberUtil;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         char isContinue = 'y';

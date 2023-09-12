@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import shared.NumberUtil;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         int movieId = 100;
         double newRating = 11.0;

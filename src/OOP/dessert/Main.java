@@ -1,6 +1,6 @@
 package OOP.dessert;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         Dessert cake = new Dessert(4.99);
         cake.setIngredients(new String[] {"Eggs", "Flower", "Baking Powder"});

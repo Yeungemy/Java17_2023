@@ -1,6 +1,6 @@
 package OOP.bookStore;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         Book book1 = new Book("To Kill a Mockingbird", "Harper Lee", 4.27, 15.99);
         Book book2 = new Book("1984", "George Orwell", 4.17, 12.99);
