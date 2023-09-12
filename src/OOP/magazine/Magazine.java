@@ -3,14 +3,14 @@ package OOP.magazine;
 import java.time.LocalDate;
 
 import shared.NumberUtil;
-import shared.SharedUtil;
+import shared.StringUtil;
 
 public class Magazine {
     private String title;
     private String publisher;
     private int issueNumber;
     private int publicationYear;
-    SharedUtil shared = new SharedUtil();
+    StringUtil shared = new StringUtil();
     NumberUtil numberUtil = new NumberUtil();
 
     public Magazine(String title, String publisher, int issueNumber, int publicationYear){

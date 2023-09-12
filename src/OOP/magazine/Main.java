@@ -4,10 +4,10 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 import shared.NumberUtil;
-import shared.SharedUtil;
+import shared.StringUtil;
 
 public class Main {
-    static SharedUtil sharedUtil = new SharedUtil();
+    static StringUtil sharedUtil = new StringUtil();
     static NumberUtil numberUtil = new NumberUtil();
     static int currentYear = LocalDate.now().getYear();
 
@@ -29,47 +29,18 @@ public class Main {
     }
 
     public static String promptForTitle(Scanner scanner){
-        String userInput = "";
-
-        while(true){
-            System.out.print("Enter a title of the magazine: ");
-            userInput = scanner.nextLine();
-
-            if(!sharedUtil.isNullOrBlank(userInput)){
-               return userInput;
-            }else{
-                System.out.println("Title cannot be null or blank!");
-            }
-        }
+        return sharedUtil.promptForString(scanner);
     }
 
     public static String promptForPublisher(Scanner scanner){
-        String userInput = "";
-
-        while(true){
-            System.out.print("Enter a publisher of the magazine: ");
-            userInput = scanner.nextLine();
-
-            if(!sharedUtil.isNullOrBlank(userInput)){
-               return userInput;
-            }else{
-                System.out.println("Publisher cannot be null or blank!");
-            }
-        }
+        return sharedUtil.promptForString(scanner);
     }
 
-    public static int promptForIssueNumber(Scanner scanner){
-        int userInput = 0;
-
-        userInput = numberUtil.userInputIntegerNumber(scanner, 0, Integer.MAX_VALUE);
-
-        return userInput;
+    public static int promptForIssueNumber(Scanner scanner){      
+        return numberUtil.userInputIntegerNumber(scanner, 0, Integer.MAX_VALUE);
     }
 
     public static int promptForPublicationYear(Scanner scanner){
-        int userInput = 0;
-
-        userInput = numberUtil.userInputIntegerNumber(scanner, 0, currentYear);
-        return userInput;
+        return numberUtil.userInputIntegerNumber(scanner, 0, currentYear);
     }
 }

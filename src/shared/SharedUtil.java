@@ -10,11 +10,4 @@ public class SharedUtil {
 
         return arr;
     }
-
-    /**  create a method called isNullOrBlank that takes a String input and 
-     * returns true if the input is null or blank 
-     */
-    public boolean isNullOrBlank(String input) {
-        return input.isBlank() && input == null;
-    }
 }
