@@ -25,10 +25,6 @@ public class Person {
         this.passport = Arrays.copyOf(people.passport, people.passport.length);
     }
 
-    public Person(){
-
-    }
-
     public String toString() {
         return "\npersonal information of " + this.name + ":\n\tNationality: "
                 + this.nationality + "\n\tData of Birth: " + this.dataOfBirth + "\n\tSeat #: " + this.seatNumber
@@ -40,7 +36,11 @@ public class Person {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(name == null || name.isBlank()){
+            throw new IllegalArgumentException("Name cannot be null or empty!");
+        }else{
+            this.name = name;
+        }
     }
 
     public String getNationality() {
@@ -48,7 +48,11 @@ public class Person {
     }
 
     public void setNationality(String nationality) {
-        this.nationality = nationality;
+        if(nationality == null || nationality.isBlank()){
+            throw new IllegalArgumentException("Nationality cannot be null or empty!");
+        }else{
+            this.nationality = nationality;
+        }
     }
 
     public String getDataOfBirth() {
@@ -56,6 +60,9 @@ public class Person {
     }
 
     public void setDataOfBirth(String dataOfBirth) {
+        if(dataOfBirth == null || dataOfBirth.isBlank()){
+            throw new IllegalArgumentException("Date of birth cannot be null or empty!");
+        }
         this.dataOfBirth = dataOfBirth;
     }
 

@@ -37,7 +37,11 @@ public class Book {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        if(title == null || title.isBlank()){
+            throw new IllegalArgumentException("Boot titile cannot be numll or empty!");
+        }else{
+            this.title = title;
+        }
     }
 
     public String getAuthor() {
@@ -45,7 +49,11 @@ public class Book {
     }
 
     public void setAuthor(String author) {
-        this.author = author;
+        if(author == null || author.isBlank()){
+            throw new IllegalArgumentException("Author cannot be numll or empty!");
+        }else{
+            this.author = author;
+        }
     }
 
     public double getRating() {

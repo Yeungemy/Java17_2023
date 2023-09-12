@@ -12,12 +12,15 @@ public class PhoneNoUtil {
      * @return a boolean of true or false
      */
     public boolean isValid(String phoneNo, String regx) {
-        if (regx == null) {
-            return phoneNo.matches(this.regx);
+        if (phoneNo == null || phoneNo.isBlank()) {
+            throw new IllegalArgumentException("Phone number cannot be null or blank!");
         } else {
-            return phoneNo.matches(regx);
+            if (regx == null) {
+                return phoneNo.matches(this.regx);
+            } else {
+                return phoneNo.matches(regx);
+            }
         }
-
     }
 
     /**
@@ -30,6 +33,7 @@ public class PhoneNoUtil {
     public String userInputPhoneNumber(Scanner scanner, String regx) {
         String phoneNo = "";
         boolean isValid = false;
+        
         do {
             System.out.print("Please enter a phone number in 'XXX-XXX-XXXX' format: ");
             phoneNo = scanner.next();

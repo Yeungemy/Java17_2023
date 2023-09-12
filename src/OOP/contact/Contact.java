@@ -43,7 +43,11 @@ public class Contact {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(name == null || name == ""){
+            throw new IllegalArgumentException("Username cannot be null or empty");
+        }else{
+            this.name = name;
+        }
     }
 
     public String getPhoneNumber() {
@@ -51,7 +55,11 @@ public class Contact {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        if( phoneNumber == null || phoneNumber.isBlank()){
+            throw new IllegalArgumentException("Phone number cannot be null or blank!");
+        }else{
+            this.phoneNumber = phoneNumber;
+        }         
     }
 
     public String getBirthdate() {
@@ -59,8 +67,12 @@ public class Contact {
     }
 
     public void setBirthdate(String birthdate) {
-        this.birthdate = birthdate;
-        toAge();
+        if(birthdate == null || birthdate == ""){
+            throw new IllegalArgumentException("birthdate cannot be null or empty");
+        }else{
+            this.birthdate = birthdate;
+            toAge();
+        }
     }
 
     public int getAge() {
