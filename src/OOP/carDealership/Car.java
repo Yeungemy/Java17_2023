@@ -64,18 +64,34 @@ public class Car {
     }
 
     public void setMake(String make) {
+        if(make == null || make.isBlank()){
+            throw new IllegalArgumentException("Make cannot be null or blank!");
+        }
+
         this.make = make;
     }
 
     public void setPrice(double price) {
+        if( price < 0){
+            throw new IllegalArgumentException("Price cannot be less than 0");
+        }
+
         this.price = price;
     }
 
     public void setYear(int year) {
+        if( year < 0){
+            throw new IllegalArgumentException("Year cannot be less than 0");
+        }
+
         this.year = year;
     }
 
     public void setColor(String color) {
+        if(color == null || color.isBlank()){
+            throw new IllegalArgumentException("Color cannot be null or blank!");
+        }
+
         this.color = color;
     }
 

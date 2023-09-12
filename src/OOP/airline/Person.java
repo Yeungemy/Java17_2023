@@ -38,9 +38,9 @@ public class Person {
     public void setName(String name) {
         if(name == null || name.isBlank()){
             throw new IllegalArgumentException("Name cannot be null or empty!");
-        }else{
-            this.name = name;
         }
+
+        this.name = name;
     }
 
     public String getNationality() {
@@ -50,9 +50,9 @@ public class Person {
     public void setNationality(String nationality) {
         if(nationality == null || nationality.isBlank()){
             throw new IllegalArgumentException("Nationality cannot be null or empty!");
-        }else{
-            this.nationality = nationality;
         }
+
+        this.nationality = nationality;
     }
 
     public String getDataOfBirth() {
@@ -63,6 +63,7 @@ public class Person {
         if(dataOfBirth == null || dataOfBirth.isBlank()){
             throw new IllegalArgumentException("Date of birth cannot be null or empty!");
         }
+
         this.dataOfBirth = dataOfBirth;
     }
 

@@ -31,9 +31,9 @@ public class Movie {
     public void setName(String name) {
         if( name == null || name.isBlank()){
             throw new IllegalArgumentException("Name cannot be null or blank!");
-        }else{
-            this.name = name;
-        }        
+        }
+        
+        this.name = name;
     }
 
     public String getFormat() {
@@ -43,9 +43,9 @@ public class Movie {
     public void setFormat(String format) {
         if( format == null || format.isBlank()){
             throw new IllegalArgumentException("Format cannot be null or blank!");
-        }else{
-            this.format = format;
-        }         
+        }
+        
+        this.format = format;
     }
 
     public double getRating() {
@@ -63,6 +63,7 @@ public class Movie {
         if (!(o instanceof Movie)) {
             return false;
         }
+        
         Movie movie = (Movie) o;
         return Objects.equals(name, movie.name) && Objects.equals(format, movie.format) && rating == movie.rating;
     }

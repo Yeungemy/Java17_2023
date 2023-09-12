@@ -21,20 +21,19 @@ public final class NumberUtil {
 
         if (minVal > maxVal) {
             throw new IllegalArgumentException("The maximum value should be greater than minimum value!");
-        } else {
+        }
 
-            while (tempVal < minVal || tempVal > maxVal) {
-                try {
-                    System.out.print("Please enter a number between " + minVal + " and " + maxVal + ": ");
-                    String userInput = scanner.next();
-                    tempVal = Integer.parseInt(userInput);
+        while (tempVal < minVal || tempVal > maxVal) {
+            try {
+                System.out.print("Please enter a number between " + minVal + " and " + maxVal + ": ");
+                String userInput = scanner.next();
+                tempVal = Integer.parseInt(userInput);
 
-                    if (tempVal < minVal || tempVal > maxVal) {
-                        System.out.println("Sorry, the number is outside of valid range!");
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("Invalid number and please try again!");
+                if (tempVal < minVal || tempVal > maxVal) {
+                    System.out.println("Sorry, the number is outside of valid range!");
                 }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid number and please try again!");
             }
         }
 

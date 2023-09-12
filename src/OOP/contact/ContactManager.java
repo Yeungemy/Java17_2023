@@ -3,12 +3,12 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import shared.DateUtil;
-import shared.PhoneNoUtil;
+import shared.PhoneUtil;
 
 public class ContactManager {
     private Contact[] contacts;
     DateUtil sharedDateUtil = new DateUtil();
-    PhoneNoUtil phoneNoUtil = new PhoneNoUtil();
+    PhoneUtil phoneNoUtil = new PhoneUtil();
 
     public ContactManager(Contact[] contacts){
         Contact[] temp = new Contact[contacts.length];

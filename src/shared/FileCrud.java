@@ -15,15 +15,15 @@ public class FileCrud {
     public String readFile(String filePath) throws IOException {
         if (filePath == null || filePath.isBlank()) {
             throw new IllegalArgumentException("File path cannot be null or blank!");
-        } else {
-            FileInputStream fis = new FileInputStream(filePath);
-            File file = new File(filePath);
-            byte[] data = new byte[(int) file.length()];
-
-            fis.read(data);
-            fis.close();
-
-            return new String(data, "UTF-8");
         }
+
+        FileInputStream fis = new FileInputStream(filePath);
+        File file = new File(filePath);
+        byte[] data = new byte[(int) file.length()];
+
+        fis.read(data);
+        fis.close();
+
+        return new String(data, "UTF-8");
     }
 }

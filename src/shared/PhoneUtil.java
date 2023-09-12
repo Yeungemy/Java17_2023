@@ -2,7 +2,7 @@ package shared;
 
 import java.util.Scanner;
 
-public class PhoneNoUtil {
+public class PhoneUtil {
     private final String regx = "\\d{3}-\\d{3}-\\d{4}";
 
     /**
@@ -14,12 +14,12 @@ public class PhoneNoUtil {
     public boolean isValid(String phoneNo, String regx) {
         if (phoneNo == null || phoneNo.isBlank()) {
             throw new IllegalArgumentException("Phone number cannot be null or blank!");
+        }
+
+        if (regx == null) {
+            return phoneNo.matches(this.regx);
         } else {
-            if (regx == null) {
-                return phoneNo.matches(this.regx);
-            } else {
-                return phoneNo.matches(regx);
-            }
+            return phoneNo.matches(regx);
         }
     }
 
@@ -33,7 +33,7 @@ public class PhoneNoUtil {
     public String userInputPhoneNumber(Scanner scanner, String regx) {
         String phoneNo = "";
         boolean isValid = false;
-        
+
         do {
             System.out.print("Please enter a phone number in 'XXX-XXX-XXXX' format: ");
             phoneNo = scanner.next();

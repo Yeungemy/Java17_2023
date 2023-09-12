@@ -14,7 +14,6 @@ public class Contact {
     private int age;
     DateUtil shared = new DateUtil();
     SharedUtil sharedUtil = new SharedUtil();
-    
 
     // Create a constructor that initializes the fields of a newly created object.
     public Contact(String name, String phoneNumber, String birthdate) {
@@ -23,18 +22,20 @@ public class Contact {
         setBirthdate(birthdate);
     }
 
-    // Create a constructor that initializes a new object using an existing object's fields.
-    public Contact(Contact source){
+    // Create a constructor that initializes a new object using an existing object's
+    // fields.
+    public Contact(Contact source) {
         this.name = source.name;
         this.phoneNumber = source.phoneNumber;
         setBirthdate(source.birthdate);
     }
 
-    public String toString(){
-        return "Personal information of " + this.name + ":\n\tPhone number: " + this.phoneNumber + "\n\tBirthdate: " + this.birthdate + "\n\tAge: " + this.age + "\n";
+    public String toString() {
+        return "Personal information of " + this.name + ":\n\tPhone number: " + this.phoneNumber + "\n\tBirthdate: "
+                + this.birthdate + "\n\tAge: " + this.age + "\n";
     }
 
-    public void printContact(){
+    public void printContact() {
         System.out.println(toString());
     }
 
@@ -43,11 +44,11 @@ public class Contact {
     }
 
     public void setName(String name) {
-        if(name == null || name == ""){
+        if (name == null || name == "") {
             throw new IllegalArgumentException("Username cannot be null or empty");
-        }else{
-            this.name = name;
         }
+
+        this.name = name;
     }
 
     public String getPhoneNumber() {
@@ -55,11 +56,11 @@ public class Contact {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        if( phoneNumber == null || phoneNumber.isBlank()){
+        if (phoneNumber == null || phoneNumber.isBlank()) {
             throw new IllegalArgumentException("Phone number cannot be null or blank!");
-        }else{
-            this.phoneNumber = phoneNumber;
-        }         
+        }
+
+        this.phoneNumber = phoneNumber;
     }
 
     public String getBirthdate() {
@@ -67,12 +68,12 @@ public class Contact {
     }
 
     public void setBirthdate(String birthdate) {
-        if(birthdate == null || birthdate == ""){
+        if (birthdate == null || birthdate == "") {
             throw new IllegalArgumentException("birthdate cannot be null or empty");
-        }else{
-            this.birthdate = birthdate;
-            toAge();
         }
+
+        this.birthdate = birthdate;
+        toAge();
     }
 
     public int getAge() {
