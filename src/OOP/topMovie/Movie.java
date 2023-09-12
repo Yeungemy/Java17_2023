@@ -52,7 +52,14 @@ public class Movie {
         return this.rating;
     }
 
+    /**
+     * Set rating of a movie
+     * @param {double} rating - the rating is less than 0 or greater than 10
+     */
     public void setRating(double rating) {
+        if(rating < 0 || rating > 10){
+            throw new IllegalArgumentException("The rating should not be less than 0 or greater than 10!");
+        }
         this.rating = rating;
     }
 

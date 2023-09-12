@@ -40,7 +40,7 @@ public final class NumberUtil {
         return tempVal;
     }
 
-    public static double userInputDoubleValue(Scanner scanner, double minVal, double maxVal, int decimalDigit) {
+    public double userInputDoubleValue(Scanner scanner, double minVal, double maxVal, int decimalDigit) {
         double tempVal = maxVal + 1;
 
         if (minVal > maxVal) {

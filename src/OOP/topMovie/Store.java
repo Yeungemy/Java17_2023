@@ -1,8 +1,11 @@
 package OOP.topMovie;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Store {
     private List<Movie> movies;
@@ -68,6 +71,35 @@ public class Store {
             removeMovie(0);
             removeMovies();
         }
+    }
+
+    /**
+     * Load movies from a file
+     * @param {String} filePath - the path of a file
+     * @param {String} seporator - the seporator of each field
+     * @throws FileNotFoundException
+     */
+    public void loadMovies(String filePath, String seporator) throws FileNotFoundException{
+        if(filePath == null || filePath.isBlank()){
+            throw new IllegalArgumentException("File path cannot be null or blank!");
+        }
+
+        if(seporator == null || seporator.isBlank()){
+            throw new IllegalArgumentException("Seporator path cannot be null or blank!");
+        }
+
+        FileInputStream fis = new FileInputStream(filePath);
+        Scanner scanner = new Scanner(fis);
+
+        while(scanner.hasNextLine()){
+            String line = scanner.nextLine();
+
+            String[] data = line.split(seporator);
+
+            addMovie(new Movie(data[0], data[1], Double.parseDouble(data[2])));
+        }
+
+        scanner.close();
     }
 
     @Override

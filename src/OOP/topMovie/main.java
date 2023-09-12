@@ -1,5 +1,6 @@
 package OOP.topMovie;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import shared.NumberUtil;
@@ -11,24 +12,32 @@ public class main {
         Scanner scanner = new Scanner(System.in);
         char isContinue = 'y';
         NumberUtil shared = new NumberUtil();
+        String filePath = "src/assets/movies.txt";
+        String separator = "--";
 
-        Movie[] movies = new Movie[] {
-                new Movie("The Shawshank Redemption", "BlueRay", 9.2),
-                new Movie("The Godfather", "BlueRay", 9.1),
-                new Movie("The Godfather: Part II", "DVD", 9.0),
-                new Movie("The Dark Knight", "BlueRay", 9.0),
-                new Movie("Schindler's List", "DVD", 8.9),
-                new Movie("The Lord of the Rings: The Return of the King", "BlueRay", 8.9),
-                new Movie("Pulp Fiction", "DVD", 8.8),
-                new Movie("The Lord of the Rings: TThe Lord of the Rings: The Return of the King", "DVD", 8.8),
-                new Movie("Pulp The Good, the Bad and the Ugly", "DVD", 8.8),
-                new Movie("The Lord of the Rings: The Fellowship of the Ring", "DVD", 8.8)
-        };
+        // Movie[] movies = new Movie[] {
+        //         new Movie("The Shawshank Redemption", "BlueRay", 9.2),
+        //         new Movie("The Godfather", "BlueRay", 9.1),
+        //         new Movie("The Godfather: Part II", "DVD", 9.0),
+        //         new Movie("The Dark Knight", "BlueRay", 9.0),
+        //         new Movie("Schindler's List", "DVD", 8.9),
+        //         new Movie("The Lord of the Rings: The Return of the King", "BlueRay", 8.9),
+        //         new Movie("Pulp Fiction", "DVD", 8.8),
+        //         new Movie("The Lord of the Rings: TThe Lord of the Rings: The Return of the King", "DVD", 8.8),
+        //         new Movie("Pulp The Good, the Bad and the Ugly", "DVD", 8.8),
+        //         new Movie("The Lord of the Rings: The Fellowship of the Ring", "DVD", 8.8)
+        // };
 
         Store store = new Store();
 
-        // populate movies to the store
-        store.addMovies(movies);
+        try{
+            store.loadMovies(filePath, separator);
+        }catch(FileNotFoundException e){
+            System.out.println("The file is not existing!");
+        }
+        
+        // // populate movies to the store
+        // store.addMovies(movies);
 
         // print store movie inventory
         store.printStore();
