@@ -1,5 +1,6 @@
 package OOP.player;
-import OOP.player.Team.Position;
+import static OOP.player.contants.Regulation.*;
+import static OOP.player.contants.Position.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -21,13 +22,28 @@ public class Game {
                 "\n - This matchup takes place at the " + this.arena + " arena on " + formattedDate + "." +
                         "\n - Tonight's game is between the " + home.getName() + " and the " + guest.getName() + ".\n" +
                         "\n - The starting lineup for the home team is: at point guard, "
-                        + home.getPlayer(Position.POINT_GUARD) + "; at shooting guard, " + home.getPlayer(Position.SHOOTING_GUARD)
-                        + "; at small forward, " + home.getPlayer(Position.SMALL_FORWARD) + "; at power forward, "
-                        + home.getPlayer(Position.POWER_FORWARD) + "; and at center, " + home.getPlayer(Position.CENTER) + ".\n" +
+                        + home.getPlayer(POINT_GUARD) + "; at shooting guard, " + home.getPlayer(SHOOTING_GUARD)
+                        + "; at small forward, " + home.getPlayer(SMALL_FORWARD) + "; at power forward, "
+                        + home.getPlayer(POWER_FORWARD) + "; and at center, " + home.getPlayer(CENTER) + ".\n" +
                         "\n - The starting lineup for the visiting team is: at point guard, "
-                        + guest.getPlayer(Position.POINT_GUARD) + "; at shooting guard, " + guest.getPlayer(Position.SHOOTING_GUARD)
-                        + "; at small forward, " + guest.getPlayer(Position.SMALL_FORWARD) + "; at power forward, "
-                        + guest.getPlayer(Position.POWER_FORWARD) + "; and at center, " + guest.getPlayer(Position.CENTER) + ".\n" +
+                        + guest.getPlayer(POINT_GUARD) + "; at shooting guard, " + guest.getPlayer(SHOOTING_GUARD)
+                        + "; at small forward, " + guest.getPlayer(SMALL_FORWARD) + "; at power forward, "
+                        + guest.getPlayer(POWER_FORWARD) + "; and at center, " + guest.getPlayer(CENTER) + ".\n" +
                         "\n - Let's give a warm round of applause for both teams as they take the court!");
+    }
+
+    public String toString(){
+        return
+            "\n\nHere is the regulation as below: " +
+            "\nArena: " + this.arena + 
+            "\nDate: " + this.date.toString() +
+            "\nCourt length (feet): " + COURT_LENGTH + 
+            "\nRim height (feet): " + RIM_HEIGHT + 
+            "\nDistance from three-point arc: " + THREE_POINT_DISTANCE + 
+            "\nPoints awarded beyond the three-point arc: " + BEYOND_THREE_POINT_ARC +
+            "\nPoints awarded inside the three-point arc: " + INSIDE_THREE_POINT_ARC +
+            "\nPoints awarded from a free throw: " + FREE_THROW + 
+            "\nLength of each quarter (minutes): " + QUARTER_LENGTH +
+            "\nSeconds to attempt shot after gaining possession: " + POSSESSION_TIME;
     }
 }

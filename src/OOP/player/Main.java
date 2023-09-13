@@ -1,23 +1,24 @@
 package OOP.player;
-import OOP.player.Team.Position;;
+import static OOP.player.contants.Position.*;
 
 public class Main {
     public static void main(String[] args) {
         Team bulls = new Team("Chicago Bulls");
-        bulls.setPlayer(Position.SHOOTING_GUARD, "Michael Jordan");
-        bulls.setPlayer(Position.SMALL_FORWARD, "Scottie Pippen");
-        bulls.setPlayer(Position.POWER_FORWARD, "Dennis Rodman");
-        bulls.setPlayer(Position.CENTER, "Bill Wennington");
-        bulls.setPlayer(Position.POINT_GUARD, "Randy Brown");
+        bulls.setPlayer(SHOOTING_GUARD, "Michael Jordan");
+        bulls.setPlayer(SMALL_FORWARD, "Scottie Pippen");
+        bulls.setPlayer(POWER_FORWARD, "Dennis Rodman");
+        bulls.setPlayer(CENTER, "Bill Wennington");
+        bulls.setPlayer(POINT_GUARD, "Randy Brown");
 
         Team pistons = new Team("Detroit Pistons");
-        pistons.setPlayer(Position.SHOOTING_GUARD, "Joe Dumars");
-        pistons.setPlayer(Position.SMALL_FORWARD, "Grant Hill");
-        pistons.setPlayer(Position.POWER_FORWARD, "Otis Thorpe");
-        pistons.setPlayer(Position.CENTER, "William Bedford");
-        pistons.setPlayer(Position.POINT_GUARD, "Isiah Thomas");
+        pistons.setPlayer(SHOOTING_GUARD, "Joe Dumars");
+        pistons.setPlayer(SMALL_FORWARD, "Grant Hill");
+        pistons.setPlayer(POWER_FORWARD, "Otis Thorpe");
+        pistons.setPlayer(CENTER, "William Bedford");
+        pistons.setPlayer(POINT_GUARD, "Isiah Thomas");
 
         Game game = new Game("Etihad Stadium");
         game.begin(bulls, pistons);
+        System.out.println(game);
     }
 }

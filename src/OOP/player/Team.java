@@ -1,10 +1,9 @@
 package OOP.player;
-
 import java.util.HashMap;
 import java.util.Map;
+import OOP.player.contants.Position;
 
-public class Team {
-    public enum Position {SHOOTING_GUARD, SMALL_FORWARD, POWER_FORWARD, CENTER, POINT_GUARD}; 
+public class Team { 
     private String name;
     private Map<Position, String> players;
 
