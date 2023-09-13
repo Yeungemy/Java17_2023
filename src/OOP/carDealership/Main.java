@@ -13,6 +13,7 @@ public class Main {
         NumberUtil numberUtil = new NumberUtil();
         Scanner scanner = new Scanner(System.in);
         int userInput = 99;
+        
         Car[] cars = new Car[] {
             new Car("Toyota", "Camry", SEDAN, 2020, 30000, "red", new String[] {"tires", "keys"}),
             new Car("Dodge", "Camry", COUPE, 2020, 30000,  "blue", new String[] {"tires", "keys"}),
@@ -20,6 +21,9 @@ public class Main {
             new Car("Honda", "Camry", HATCHBACK, 2020, 30000,  "orange", new String[] {"tires", "filter"}),
             new Car("Mercedes", "Camry", TRUCK, 2020, 30000,  "jet black", new String[] {"tires", "filter", "transmission"})
         };
+
+        final int MIN_CAR_ID = 0;
+        final int MAX_CAR_ID = cars.length;
 
         cars[3].setColor("black");
         Dealership dealership = new Dealership();
@@ -29,7 +33,7 @@ public class Main {
         System.out.println(dealership);
 
         // ensure user enter a correct park spot number
-        userInput = numberUtil.userInputIntegerNumber(scanner, 0, 4);
+        userInput = numberUtil.userInputIntegerNumber(scanner, MIN_CAR_ID, MAX_CAR_ID);
 
         System.out.println("\nYor are going to buy the following car at parking spot #" + userInput + ": \n" + dealership.getCar(userInput) + "\n\n");
 
