@@ -11,5 +11,3 @@ public class Regulation {
     public static final int POSSESSION_TIME = 24;
 
 }
-
-
