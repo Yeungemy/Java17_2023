@@ -7,7 +7,7 @@ public class StringUtil {
      * returns true if the input is null or blank 
      */
     public boolean isNullOrBlank(String input) {
-        return input.isBlank() && input == null;
+        return input.isBlank() || input == null;
     }
 
     public String promptForString(Scanner scanner){
