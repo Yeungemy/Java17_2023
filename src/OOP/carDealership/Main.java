@@ -1,46 +1,43 @@
 package OOP.carDealership;
 import java.util.Scanner;
-import OOP.carDealership.Car.TrafficLights;
+
+import shared.NumberUtil;
+
+import static OOP.carDealership.constants.BodyType.*;
+
+import static OOP.carDealership.constants.TrafficLights.*;
+
 
 public class Main {
     public static void main(String[] args) {
+        NumberUtil numberUtil = new NumberUtil();
         Scanner scanner = new Scanner(System.in);
         int userInput = 99;
         Car[] cars = new Car[] {
-            new Car("Nissan", 5000, 2020, "red", new String[] {"tires", "keys"}),
-            new Car("Dodge", 8500, 2019, "blue", new String[] {"tires", "keys"}),
-            new Car("Nissan", 5000, 2017, "yellow", new String[] {"tires", "filter"}),
-            new Car("Honda", 7000, 2019, "orange", new String[] {"tires", "filter"}),
-            new Car("Mercedes", 12000, 2015, "jet black", new String[] {"tires", "filter", "transmission"})
+            new Car("Toyota", "Camry", SEDAN, 2020, 30000, "red", new String[] {"tires", "keys"}),
+            new Car("Dodge", "Camry", COUPE, 2020, 30000,  "blue", new String[] {"tires", "keys"}),
+            new Car("Nissan", "Camry", SUV, 2020, 30000,  "yellow", new String[] {"tires", "filter"}),
+            new Car("Honda", "Camry", HATCHBACK, 2020, 30000,  "orange", new String[] {"tires", "filter"}),
+            new Car("Mercedes", "Camry", TRUCK, 2020, 30000,  "jet black", new String[] {"tires", "filter", "transmission"})
         };
 
         cars[3].setColor("black");
-        Dealership dealership = new Dealership(cars);
+        Dealership dealership = new Dealership();
+        dealership.addCars(cars);
 
         System.out.println("Feel free to browser our collection of cars as below: ");
         System.out.println(dealership);
 
         // ensure user enter a correct park spot number
-        do{
-            try {
-                System.out.print("Enter parking spot number between 1 and 5: ");
-                String text = scanner.nextLine(); 
-                userInput = (Integer.parseInt(text) - 1);
-            } catch (NumberFormatException ime) {
-                System.out.println("Invalid input - numbers only please");
-            }
-
-        }while(userInput < 0 || userInput > 4);
+        userInput = numberUtil.userInputIntegerNumber(scanner, 0, 4);
 
         System.out.println("\nYor are going to buy the following car at parking spot #" + userInput + ": \n" + dealership.getCar(userInput) + "\n\n");
 
         // sell the car chosen by user
         dealership.sellCar(userInput);
         Car soldCar = new Car(dealership.getCar(userInput));
-
-        // 
         
-        // soldCar.drive(TrafficLights.GREEN);
+        soldCar.drive(GREEN);
         
         // update inventory
         dealership.removeCar(userInput);     
