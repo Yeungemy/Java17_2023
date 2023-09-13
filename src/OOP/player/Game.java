@@ -1,5 +1,5 @@
-package OOP.starter;
-
+package OOP.player;
+import OOP.player.Team.Position;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -21,13 +21,13 @@ public class Game {
                 "\n - This matchup takes place at the " + this.arena + " arena on " + formattedDate + "." +
                         "\n - Tonight's game is between the " + home.getName() + " and the " + guest.getName() + ".\n" +
                         "\n - The starting lineup for the home team is: at point guard, "
-                        + home.getPlayer("POINT_GUARD") + "; at shooting guard, " + home.getPlayer("SHOOTING_GUARD")
-                        + "; at small forward, " + home.getPlayer("SMALL_FORWARD") + "; at power forward, "
-                        + home.getPlayer("POWER_FORWARD") + "; and at center, " + home.getPlayer("CENTER") + ".\n" +
+                        + home.getPlayer(Position.POINT_GUARD) + "; at shooting guard, " + home.getPlayer(Position.SHOOTING_GUARD)
+                        + "; at small forward, " + home.getPlayer(Position.SMALL_FORWARD) + "; at power forward, "
+                        + home.getPlayer(Position.POWER_FORWARD) + "; and at center, " + home.getPlayer(Position.CENTER) + ".\n" +
                         "\n - The starting lineup for the visiting team is: at point guard, "
-                        + guest.getPlayer("POINT_GUARD") + "; at shooting guard, " + guest.getPlayer("SHOOTING_GUARD")
-                        + "; at small forward, " + guest.getPlayer("SMALL_FORWARD") + "; at power forward, "
-                        + guest.getPlayer("POWER_FORWARD") + "; and at center, " + guest.getPlayer("CENTER") + ".\n" +
+                        + guest.getPlayer(Position.POINT_GUARD) + "; at shooting guard, " + guest.getPlayer(Position.SHOOTING_GUARD)
+                        + "; at small forward, " + guest.getPlayer(Position.SMALL_FORWARD) + "; at power forward, "
+                        + guest.getPlayer(Position.POWER_FORWARD) + "; and at center, " + guest.getPlayer(Position.CENTER) + ".\n" +
                         "\n - Let's give a warm round of applause for both teams as they take the court!");
     }
 }

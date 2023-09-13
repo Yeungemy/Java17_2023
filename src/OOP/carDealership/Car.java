@@ -9,6 +9,7 @@ public class Car {
     private int year;
     private String color;
     private String[] parts;
+    public enum TrafficLights {RED, GREEN, YELLOW};
 
     public String[] getParts() {
         return Arrays.copyOf(this.parts, this.parts.length);
@@ -98,5 +99,17 @@ public class Car {
     public void drive() {
         System.out.println("You bough a beautiful " + this.year + " " + this.color + " " + this.make + " for $"
                 + new DecimalFormat("##.##").format(this.price) + ". \nPlease drive it to the nearest exit!");
+    }
+
+    public void drive(TrafficLights trafficLight){
+        if(trafficLight == null){
+            throw new IllegalArgumentException("TrafficLight can only be 'RED', 'GREEN', or 'YELLOW'!");
+        }
+
+        switch(trafficLight){
+            case RED: System.out.println("STOP"); break;
+            case GREEN: System.out.println("DRIVE"); break;
+            case YELLOW: System.out.println("SLOW DOWN"); break;
+        }
     }
 }

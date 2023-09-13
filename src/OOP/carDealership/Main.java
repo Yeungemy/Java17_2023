@@ -1,5 +1,6 @@
 package OOP.carDealership;
 import java.util.Scanner;
+import OOP.carDealership.Car.TrafficLights;
 
 public class Main {
     public static void main(String[] args) {
@@ -35,6 +36,11 @@ public class Main {
 
         // sell the car chosen by user
         dealership.sellCar(userInput);
+        Car soldCar = new Car(dealership.getCar(userInput));
+
+        // 
+        
+        // soldCar.drive(TrafficLights.GREEN);
         
         // update inventory
         dealership.removeCar(userInput);     
