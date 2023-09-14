@@ -12,6 +12,11 @@ public class Main {
         Sphere sphere = new Sphere(sphereRadius);
 
         System.out.println(sphere);
+        System.out.println("The area of sphere: " + sphere.getArea());
+        System.out.println("The volume of sphere: " + sphere.getVolume());
+
         System.out.println(cylinder);
+        System.out.println("The area of cylinder: " + cylinder.getArea());
+        System.out.println("The volume of cylinder: " + cylinder.getVolume());
     }
 }
