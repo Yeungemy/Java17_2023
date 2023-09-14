@@ -11,7 +11,7 @@ public class Store {
     private List<Movie> movies;
 
     public Store() {
-        this.movies = new ArrayList<Movie>() {
+        this.movies = new ArrayList<>() {
         };
     }
 
@@ -47,7 +47,7 @@ public class Store {
         this.movies.set(index, new Movie(movie));
     }
 
-    /** insert moive */
+    /** Create a method named addMovie that takes a Movie object as a parameter and adds it to the movies list */
     public void addMovie(Movie movie) {
         this.movies.add(new Movie(movie));
     }
