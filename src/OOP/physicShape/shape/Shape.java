@@ -3,8 +3,7 @@ package OOP.physicShape.shape;
 public class Shape {    
     private double radius;
 
-    public Shape(){}
-
+    /** Create a constructor inside Shape that updates the radius of the current object. */
     public Shape(double radius){
         this.radius = radius;
     }
@@ -19,5 +18,9 @@ public class Shape {
         }
 
         this.radius = radius;
+    }
+
+    public String toString(){
+        return "radius: " + this.radius;
     }
 }

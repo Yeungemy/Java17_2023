@@ -4,14 +4,14 @@ import OOP.physicShape.shape.Sphere;
 
 public class Main {
     public static void main(String[] args) {
-        Cylinder cylinder = new Cylinder();
-        cylinder.setHeight(2.0);
-        cylinder.setRadius(1.0);
-        
-        Sphere sphere = new Sphere();
-        sphere.setRadius(1.0);
+        double cylinderRadius = 1.0;
+        double cylinderHeight = 2.0;
+        double sphereRadius = 1.0;
 
-        System.out.println("Sphere - radius: " + sphere.getRadius());
-        System.out.println("Cylinder - radius: " + cylinder.getRadius() + " height " + cylinder.getHeight());
+        Cylinder cylinder = new Cylinder(cylinderRadius, cylinderHeight);
+        Sphere sphere = new Sphere(sphereRadius);
+
+        System.out.println(sphere);
+        System.out.println(cylinder);
     }
 }
