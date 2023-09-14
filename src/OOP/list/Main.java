@@ -92,7 +92,5 @@ public class Main {
         start = System.currentTimeMillis();			
 		arrayList.set(4_500_000, 5);
         System.out.println("ArrayList: " + (System.currentTimeMillis() - start) + "ms");
-
 	}
-
 }
