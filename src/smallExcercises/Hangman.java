@@ -1,4 +1,4 @@
-package capstoneProject;
+package smallExcercises;
 
 import java.util.ArrayList;
 import java.util.Scanner;

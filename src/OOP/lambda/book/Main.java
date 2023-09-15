@@ -23,15 +23,15 @@ public class Main {
                 new Book("The Time Machine", "Science Fiction", 1895, 12.96),
                 new Book("The Picture of Dorian Gray", "Gothic", 1890, 13.94));
 
+        BookStore bookStore = new BookStore();
+        bookStore.addBooks(books);
+
         System.out.println("\nThese books are on sale\n-----------------------");
         books.stream()
                 .filter(book -> book.getGenre().equals("Romance"))
                 .map(book -> new Book(book.getTitle(), book.getGenre(), book.getYear(), book.getPrice() * .50))
                 .sorted((a, b) -> a.getYear().compareTo(b.getYear()))
                 .forEach(System.out::println);
-
-        BookStore bookStore = new BookStore();
-        bookStore.addBooks(books);
 
         List<Book> fictionBooks = bookStore.filterByGenre("Fiction");
         List<Book> sortedBooks = bookStore.sortByReleaseYear();
@@ -45,6 +45,5 @@ public class Main {
 
         System.out.println("\nTop Priced Books:\n----------------------------------------------");
         topPricedBooks.forEach(Book -> System.out.println(Book));
-
     }
 }

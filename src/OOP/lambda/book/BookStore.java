@@ -12,7 +12,7 @@ public class BookStore {
         this.books = new ArrayList<>();
     }
 
-    public void addBooks( List<Book> books){
+    public void addBooks(List<Book> books) {
         books.forEach(book -> addBook(book));
     }
 
@@ -57,11 +57,11 @@ public class BookStore {
                 .collect(Collectors.toList());
     }
 
-    public List<Book> getTopPriceBooks(double price){
+    public List<Book> getTopPriceBooks(double price) {
         return this.books.stream()
-        .filter(book -> book.getPrice() > price)
-        .sorted((a, b) -> b.getPrice().compareTo(a.getPrice()))
-        .limit(TOP_PRICE_BOOKS)
-        .collect(Collectors.toList());
+                .filter(book -> book.getPrice() > price)
+                .sorted((a, b) -> b.getPrice().compareTo(a.getPrice()))
+                .limit(TOP_PRICE_BOOKS)
+                .collect(Collectors.toList());
     }
 }
