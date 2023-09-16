@@ -61,7 +61,5 @@ public class Main {
 
         System.out.println("************************************************************************");
         System.out.println(accountRep);
-        
-        accountRep.deleteAccount(cr.getId());
     }
 }

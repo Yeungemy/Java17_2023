@@ -7,6 +7,14 @@ public abstract class Account {
     private BigDecimal balance;
 
     public Account(String id, BigDecimal balance) {
+        if(id == null || id.isBlank()){
+            throw new IllegalArgumentException("ID cannot be empty or null");
+        }
+
+        if(balance.compareTo(BigDecimal.ZERO) <= 0){
+            throw new IllegalArgumentException("The balance should be greater than 0.");
+        }
+        
         setId(id);
         setBalance(balance);
     }
