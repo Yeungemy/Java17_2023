@@ -21,7 +21,7 @@ public class AccountRepository {
     }
 
     public Account retrieveAccount(String id) {
-        if(id == null || id.isBlank()){
+        if(id == null || id.isBlank() || ! this.dataRep.containsKey(id)){
             throw new IllegalArgumentException("ID cannot be empty or null");
         }
 
@@ -37,7 +37,7 @@ public class AccountRepository {
     }
 
     public void deleteAccount(String id) {
-        if(id == null || id.isBlank()){
+        if(id == null || id.isBlank() || ! this.dataRep.containsKey(id)){
             throw new IllegalArgumentException("ID cannot be empty or null");
         }
 

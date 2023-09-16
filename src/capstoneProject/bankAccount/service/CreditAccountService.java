@@ -35,10 +35,6 @@ public class CreditAccountService implements AccountService {
             throw new IllegalArgumentException("Account ID cannot be null or empty.");
         }
 
-        if(amount.compareTo(BigDecimal.ZERO) <= 0){
-            throw new IllegalArgumentException("The amount to be deposited should be greater than 0.");
-        }
-
         /** retrieve the account */
         CreditAccount account = retrieveAccount(id); 
         
@@ -56,10 +52,6 @@ public class CreditAccountService implements AccountService {
     public void withdraw(String id, BigDecimal amount) {
         if(id == null || id.isBlank()){
             throw new IllegalArgumentException("Account ID cannot be null or empty.");
-        }
-
-        if(amount.compareTo(BigDecimal.ZERO) <= 0 || amount.compareTo(this.accountRepository.retrieveAccount(id).getBalance()) > 0){
-            throw new IllegalArgumentException("The amount to be withdrawn should be greater than 0 and less than " + this.accountRepository.retrieveAccount(id).getBalance() + ".");
         }
 
         /** retrieve the account */

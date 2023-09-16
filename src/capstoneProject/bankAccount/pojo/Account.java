@@ -20,6 +20,10 @@ public abstract class Account {
     }
 
     public void setId(String id) {
+        if(id == null || id.isBlank()){
+            throw new IllegalArgumentException("ID cannot be empty or null");
+        }
+
         this.id = id;
     }
 
@@ -28,6 +32,10 @@ public abstract class Account {
     }
 
     public void setBalance(BigDecimal balance) {
+        if(balance.compareTo(BigDecimal.ZERO) <= 0){
+            throw new IllegalArgumentException("The balance to be deposited should be greater than 0.");
+        }
+        
         this.balance = balance;
     }
 
