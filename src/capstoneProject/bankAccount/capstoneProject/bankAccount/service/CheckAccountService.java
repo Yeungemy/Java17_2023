@@ -39,13 +39,13 @@ public class CheckAccountService implements AccountService {
         CheckAccount account = retrieveAccount(id); 
         
         /** calculate new amount */
-        BigDecimal newAmt = this.accountRepository.retrieveAccount(id).getBalance().add(amount);
+        BigDecimal newAmt = account.getBalance().add(amount);
 
         /** update the balance of the account */
         account.setBalance(newAmt);
 
         /** update the repository */
-        this.accountRepository.retrieveAccount(id).setBalance(newAmt);
+        updateAccount(account);
     }
 
     @Override
@@ -58,12 +58,12 @@ public class CheckAccountService implements AccountService {
         CheckAccount account = retrieveAccount(id); 
         
         /** calculate new amount */
-        BigDecimal newAmt = this.accountRepository.retrieveAccount(id).getBalance().subtract(amount);
+        BigDecimal newAmt = account.getBalance().subtract(amount);
 
         /** update the balance of the account */
         account.setBalance(newAmt);
 
         /** update the repository */
-        this.accountRepository.retrieveAccount(id).setBalance(newAmt);
+        updateAccount(account);
     }
 }

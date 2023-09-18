@@ -31,21 +31,21 @@ public class CreditAccountService implements AccountService {
 
     @Override
     public void deposit(String id, BigDecimal amount) {
-        if(id == null || id.isBlank()){
-            throw new IllegalArgumentException("Account ID cannot be null or empty.");
+        if(amount.compareTo(BigDecimal.ZERO) <= 0){
+            throw new IllegalArgumentException("The amount to be deposited should be greater than 0.");
         }
 
         /** retrieve the account */
         CreditAccount account = retrieveAccount(id); 
         
         /** calculate new amount */
-        BigDecimal newAmt = this.accountRepository.retrieveAccount(id).getBalance().add(amount);
+        BigDecimal newAmt = account.getBalance().subtract(amount);
 
         /** update the balance of the account */
         account.setBalance(newAmt);
 
         /** update the repository */
-        this.accountRepository.retrieveAccount(id).setBalance(newAmt);
+        updateAccount(account);
     }
 
     @Override
@@ -58,12 +58,12 @@ public class CreditAccountService implements AccountService {
         CreditAccount account = retrieveAccount(id); 
         
         /** calculate new amount */
-        BigDecimal newAmt = this.accountRepository.retrieveAccount(id).getBalance().subtract(amount);
+        BigDecimal newAmt = account.getBalance().add(amount);
 
         /** update the balance of the account */
         account.setBalance(newAmt);
 
         /** update the repository */
-        this.accountRepository.retrieveAccount(id).setBalance(newAmt);
+        updateAccount(account);
     }
 }
