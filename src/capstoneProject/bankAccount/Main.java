@@ -1,6 +1,3 @@
-package capstoneProject;
-
-import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.file.Files;
@@ -28,8 +25,8 @@ public class Main {
     static final String SEPARATOR = " ";
 
     public static void main(String[] args) {
-        final BigDecimal BAL = new BigDecimal(200);
-        BigDecimal newBAL = new BigDecimal(800);
+        // final BigDecimal BAL = new BigDecimal(200);
+        // BigDecimal newBAL = new BigDecimal(800);
 
         // // Assume these were obtained from user input.
         // List<Account> accounts = Arrays.asList(
