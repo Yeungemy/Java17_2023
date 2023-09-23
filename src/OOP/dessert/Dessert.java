@@ -3,7 +3,6 @@ package OOP.dessert;
 import java.util.Arrays;
 
 public class Dessert {
- 
     private double price;
     private String[] ingredients;
  
