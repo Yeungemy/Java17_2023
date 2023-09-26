@@ -72,5 +72,6 @@ public class Main {
         System.out.println("Account I5678J Cash Balance: " + cashAccountService.retrieveAccount("I5678J").getAmount());
         System.out.println("Account C2345D Margin: " + marginAccountService.retrieveAccount("C2345D").getAmount());
         System.out.println("Account G4567H Margin: " + marginAccountService.retrieveAccount("G4567H").getAmount());
+        System.out.println("\n\n************************************************************************\n");
     }
 }
