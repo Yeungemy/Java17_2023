@@ -17,7 +17,7 @@ public class SpeedConverter {
         return milesPerHour;
     }
     
-    public static void printConversion(double kilometersPerHour){
+    public void printConversion(double kilometersPerHour){
         long milesPerHour = toMilesPerHour(kilometersPerHour);
         String result = kilometersPerHour + " km/h = " + milesPerHour +" mi/h";
         
